@@ -73,9 +73,9 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddControllers()
     .AddJsonOptions(options => { options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve; });
 
-var connString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-builder.Services.AddDbContext<DataContext>(options => { options.UseNpgsql(connString); });
+SQLitePCL.Batteries_V2.Init();
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseSqlite("Data Source=up.db"));
 
 builder.Services.AddCors();
 
