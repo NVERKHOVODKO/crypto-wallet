@@ -12,7 +12,6 @@ namespace UP.Controllers;
 /// <summary>
 /// Controller for managing administrative tasks
 /// </summary>
-[Authorize]
 [ApiController]
 [Route("[controller]")]
 public class AdminController : ControllerBase
@@ -167,9 +166,7 @@ public class AdminController : ControllerBase
     /// Получает словарь активных монет в виде "сокращенное название монеты" - "полное название монеты".
     /// </summary>
     /// <returns>Словарь активных монет.</returns>
-    [AllowAnonymous]
     [HttpGet("get-active-coins-dict")]
-
     public async Task<IActionResult> GetCoinsDict()
     {
         var coinsList = await _dbRepository.Get<CoinListInfo>()
@@ -212,7 +209,6 @@ public class AdminController : ControllerBase
     /// </summary>
     /// <param name="email">Email address</param>
     /// <returns>Generated token</returns>
-    [AllowAnonymous]
     [HttpPost("getToken/{email}")]
     public async Task<IActionResult> GetToken(string email)
     {

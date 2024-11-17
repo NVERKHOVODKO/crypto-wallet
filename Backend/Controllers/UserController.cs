@@ -154,7 +154,7 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
     public async Task<ActionResult> ChangeUserName(Guid id, string newLogin)
     {
         var existingUser = await dbRepository.Get<User>().FirstOrDefaultAsync(x => x.Id == id);
-        if (existingUser == null)
+        if (existingUser is null)
             throw new EntityNotFoundException("User not found");
         switch (newLogin.Length)
         {
@@ -178,7 +178,7 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
     public async Task<ActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
     {
         var existingUser = await dbRepository.Get<User>().FirstOrDefaultAsync(x => x.Id == request.Id);
-        if (existingUser == null)
+        if (existingUser is null)
             throw new EntityNotFoundException("User not found");
         if (request.Password != request.PasswordRepeat) return UnprocessableEntity("Пароли не совпадают");
         switch (request.Password.Length)
@@ -195,6 +195,7 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
         existingUser.DateUpdated = DateTime.UtcNow;
 
         await dbRepository.SaveChangesAsync();
+        
         return Ok("Пароль успешно изменен");
     }
 
@@ -216,6 +217,7 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
 
         if (request.Password == null)
             throw new EntityNotFoundException("Password can't be null");
+        
         switch (request.Password.Length)
         {
             case < 4:
@@ -237,10 +239,7 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
 
     [HttpPost]
     [Route("IsNicknameUnique")]
-    private async Task<bool> IsNicknameUnique(string nickname)
-    {
-        return await dbRepository.Get<User>(x => x.Login == nickname).FirstOrDefaultAsync() == null;
-    }
+    private async Task<bool> IsNicknameUnique(string nickname) => await dbRepository.Get<User>(x => x.Login == nickname).FirstOrDefaultAsync() == null;
 
     [HttpPost]
     [Route("IsEmailUniqueAsync")]
@@ -249,7 +248,8 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
         var users = await dbRepository.Get<User>()
             .Where(x => x.Email == email && x.Id != id)
             .ToListAsync();
-        return users == null;
+        
+        return users.Count == 0;
     }
 
     [HttpPost]
@@ -259,14 +259,11 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
         var userWithSameEmail = await dbRepository.Get<User>()
             .Where(x => x.Login == login)
             .ToListAsync();
-        return userWithSameEmail == null;
+        
+        return userWithSameEmail.Count == 0;
     }
 
     [HttpPost]
     [Route("IsEmailValid")]
-    public bool IsEmailValid(string email)
-    {
-        const string regex = @"^[^@\s]+@[^@\s]+\.(com|net|org|gov)$";
-        return Regex.IsMatch(email, regex, RegexOptions.IgnoreCase);
-    }
+    public bool IsEmailValid(string email) => Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.(com|net|org|gov)$", RegexOptions.IgnoreCase);
 }

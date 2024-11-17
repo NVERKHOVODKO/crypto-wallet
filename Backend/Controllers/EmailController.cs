@@ -23,8 +23,6 @@ public class EmailController : ControllerBase
     /// <param name="request">Запрос на отправку кода верификации.</param>
     /// <returns>Результат операции отправки кода верификации.</returns>
     [HttpPost("sendVerificationCode")]
-    [AllowAnonymous]
-
     public async Task<IActionResult> SendVerificationCode(SendVerificationCodeRequest request)
     {
         await _emailService.SendVerificationCode(request.Id);
@@ -37,8 +35,6 @@ public class EmailController : ControllerBase
     /// <param name="request">Запрос на подтверждение адреса электронной почты.</param>
     /// <returns>Результат операции подтверждения адреса электронной почты.</returns>
     [HttpPost("verifyEmail")]
-    [AllowAnonymous]
-
     public async Task<IActionResult> VerifyEmail([FromBody] VerifyEmailRequest request)
     {
         await _emailService.VerifyEmail(request);
@@ -51,8 +47,6 @@ public class EmailController : ControllerBase
     /// <param name="request">Запрос на подтверждение восстановления пароля.</param>
     /// <returns>Результат операции подтверждения восстановления пароля.</returns>
     [HttpPost("confirm-restore-password")]
-    [AllowAnonymous]
-
     public async Task<IActionResult> ConfirmRestorePassword([FromBody] VerifyEmailRequest request)
     {
         await _emailService.VerifyEmail(request);
