@@ -77,8 +77,16 @@ SQLitePCL.Batteries_V2.Init();
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlite("Data Source=up.db"));
 
-builder.Services.AddCors();
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowLocalhost",
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.RequireHttpsMetadata = false;

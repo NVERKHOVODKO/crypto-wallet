@@ -15,7 +15,6 @@ namespace UP.Controllers;
 public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers)
     : ControllerBase
 {
-
     [HttpPut]
     [Route("editUserLogin")]
     public async Task<ActionResult> EditUserLogin([FromBody] EditUserLoginRequest request)
