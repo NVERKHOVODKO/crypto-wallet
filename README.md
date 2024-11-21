@@ -1,3 +1,11 @@
+архитектура 
+схема базы
+user flow
+security
+deploy
+user guide
+
+
 # Проектное руководство
 
 ## 1. Пользовательский интерфейс
@@ -54,7 +62,26 @@ User Flow для пользователя и администратора пре
 ### 1.2 Примеры экранов UI
 *(Здесь будут размещены скриншоты или макеты экранов пользовательского интерфейса.)*
 
----
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/10%D0%BE.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/11%D0%B0.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/12%D0%BA.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/13%D0%BF.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/15%D1%82.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/17%D1%83.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/18%D1%80.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/19%D0%B8.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/20%D0%B2.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/21%D0%BF.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/22%D0%B4.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/23%D0%B4.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/2%D1%80.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/3%D0%B3.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/4%D0%B8.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/5%D0%BA.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/6%D0%BF.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/7%D0%BA.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/8%D1%81.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/9%D0%BA.jpg)
 
 ## 2. Безопасность
 
