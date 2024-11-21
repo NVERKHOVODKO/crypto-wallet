@@ -1,10 +1,3 @@
-архитектура 
-схема базы
-user flow
-security
-deploy
-user guide
-
 ### Физическая модель базы данных
 
 ![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/schemes/DB.jpg)
