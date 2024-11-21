@@ -54,6 +54,8 @@ User Flow для пользователя и администратора пре
 ### 1.2 Примеры экранов UI
 *(Здесь будут размещены скриншоты или макеты экранов пользовательского интерфейса.)*
 
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/10%D0%BE.jpg)
+
 !(https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/10%D0%BE.jpg)
 !(https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/11%D0%B0.jpg)
 !(https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/10%D0%BE.jpg)
