@@ -203,3 +203,14 @@ COPY . .
 EXPOSE 3000
 CMD ["npm", "start"]
 
+### Развертывание всех служб:
+
+docker-compose up --build
+
+### Остановка и удаление контейнеров:
+
+docker-compose down
+
+### Остановка контейнеров без их удаления:
+
+docker-compose stop
