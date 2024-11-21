@@ -5,12 +5,15 @@ security
 deploy
 user guide
 
+### Физическая модель базы данных
+
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/schemes/DB.jpg)
 
 # Проектное руководство
 
-## 1. Пользовательский интерфейс
+## Пользовательский интерфейс
 
-### 1.1 User Flow диаграммы
+### User Flow диаграммы
 
 **User Flow** – это схема движения пользователя, наглядный разветвлённый сценарий его взаимодействия с конкретным цифровым продуктом: приложением или сайтом. User Flow показывает точки входа в сценарий, все переходы и страницы на пути к достижению пользователем его цели. 
 
@@ -59,7 +62,7 @@ User Flow для пользователя и администратора пре
 Каждый процесс сопровождается цифровой маркировкой, указывающей на использование конкретных интерфейсов системы.  
 
 
-### 1.2 Примеры экранов UI
+### Примеры экранов UI
 
 ![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/10%D0%BE.jpg)
 ![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/11%D0%B0.jpg)
@@ -82,7 +85,7 @@ User Flow для пользователя и администратора пре
 ![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/8%D1%81.jpg)
 ![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/pages/9%D0%BA.jpg)
 
-## 2. Безопасность
+## Безопасность
 
 Для обеспечения надежности системы реализованы следующие меры безопасности:
 
@@ -129,5 +132,74 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 
 ---
 
-## 3. Развёртывание
-*(В разработке.)*
+## Развёртывание
+# Docker Compose для развертывания приложения
+
+## Структура `docker-compose.yml`
+
+```yaml
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: appdb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  api:
+    image: mcr.microsoft.com/dotnet/aspnet:8.0
+    container_name: aspnet-api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Database=appdb;User=appuser;Password=apppassword;
+    ports:
+      - "5000:80"
+    depends_on:
+      - db
+
+  client:
+    image: node:18-alpine
+    container_name: react-client
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    depends_on:
+      - api
+volumes:
+  db_data:
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY . .
+RUN dotnet restore
+RUN dotnet publish -c Release -o /app
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+WORKDIR /app
+COPY --from=build /app .
+ENTRYPOINT ["dotnet", "UP.dll"]
+
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]
+
