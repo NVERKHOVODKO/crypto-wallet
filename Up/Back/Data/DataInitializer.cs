@@ -1,4 +1,6 @@
-﻿namespace UP.Data;
+﻿using Back.Handlers;
+
+namespace UP.Data;
 
 public class DataInitializer
 {

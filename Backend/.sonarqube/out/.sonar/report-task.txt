@@ -1,0 +1,7 @@
+organization=nverkhovodko
+projectKey=NVERKHOVODKO_crypto-wallet-up
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.58561
+dashboardUrl=https://sonarcloud.io/dashboard?id=NVERKHOVODKO_crypto-wallet-up
+ceTaskId=AZPKxDmtxo-O7XJWrUUZ
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZPKxDmtxo-O7XJWrUUZ

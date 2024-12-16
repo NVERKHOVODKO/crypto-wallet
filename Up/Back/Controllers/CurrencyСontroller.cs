@@ -1,4 +1,4 @@
-﻿namespace UP.Controllers;
+﻿namespace Back.Controllers;
 
 /// <summary>
 /// Контроллер для управления валютами, балансами пользователей и получения информации о криптовалютах.

@@ -1,4 +1,4 @@
-﻿namespace UP.Controllers;
+﻿namespace Back.Controllers;
 
 /// <summary>
 /// Контроллер для работы с пользователями
@@ -7,7 +7,7 @@
 /// <param name="userService"></param>
 [ApiController]
 [Route("user")]
-public class UserController(IDbRepository dbRepository, IUserService userService) : ControllerBase
+public class UserController(IUserService userService) : ControllerBase
 {
     /// <summary>
     /// Редактирует логин пользователя.
@@ -48,7 +48,7 @@ public class UserController(IDbRepository dbRepository, IUserService userService
     /// <response code="200">Пароль успешно изменен.</response>
     /// <response code="400">Неверный формат пароля.</response>
     [HttpPut("edit-user-password")]
-    public async Task<ActionResult> EditUserPasswordAsync([FromBody] EditUserPasswordRequest request)
+    public async Task<ActionResult> EditPasswordAsync([FromBody] EditUserPasswordRequest request)
     {
         await userService.EditUserPasswordAsync(request);
         
@@ -63,7 +63,7 @@ public class UserController(IDbRepository dbRepository, IUserService userService
     /// <response code="200">Email успешно изменен.</response>
     /// <response code="400">Неверный или уже существующий email.</response>
     [HttpPut("edit-user-email")]
-    public async Task<ActionResult> EditUserEmail([FromBody] EditUserEmailRequest request)
+    public async Task<ActionResult> EditEmailAsync([FromBody] EditUserEmailRequest request)
     {
         await userService.EditUserEmailAsync(request);
         
@@ -110,14 +110,7 @@ public class UserController(IDbRepository dbRepository, IUserService userService
     [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteAccount(Guid id)
     {
-        var existingUser = await dbRepository.Get<User>().FirstOrDefaultAsync(x => x.Id == id);
-        if (existingUser == null)
-            throw new EntityNotFoundException("User not found");
-
-        existingUser.IsDeleted = true;
-        existingUser.DateUpdated = DateTime.UtcNow;
-
-        await dbRepository.SaveChangesAsync();
+        await userService.DeleteAccountAsync(id);
         
         return Ok("Пользователь удален");
     }

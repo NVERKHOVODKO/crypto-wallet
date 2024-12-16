@@ -1,13 +1,13 @@
-﻿namespace UP.Services;
+﻿namespace Back.Services;
 
 /// <summary>
 /// Сервис для работы с пользователями. Предоставляет методы проверки уникальности данных,
 /// создания, редактирования и получения информации о пользователях.
 /// </summary>
 /// <param name="dbRepository">Репозиторий для взаимодействия с базой данных.</param>
-/// <param name="hashHelpers">Сервис для работы с хэшированием.</param>
+/// <param name="hashHelper">Сервис для работы с хэшированием.</param>
 [AutoInterface]
-public class UserService(IDbRepository dbRepository, IHashHelpers hashHelpers) : IUserService
+public class UserService(IDbRepository dbRepository, IHashHelper hashHelper) : IUserService
 {
     /// <summary>
     /// Проверяет, уникален ли указанный логин.
@@ -84,8 +84,8 @@ public class UserService(IDbRepository dbRepository, IHashHelpers hashHelpers) :
         var user = new User();
         if (!await IsLoginUniqueAsync(request.Nickname)) throw new IncorrectDataException("Nickname must be unique");
         user.Login = request.Nickname;
-        user.Salt = hashHelpers.GenerateSalt(30);
-        user.Password = hashHelpers.HashPassword(request.Password, user.Salt);
+        user.Salt = hashHelper.GenerateSalt(30);
+        user.Password = hashHelper.HashPassword(request.Password, user.Salt);
         user.DateCreated = DateTime.UtcNow;
         user.Id = request.Id;
         
@@ -118,7 +118,7 @@ public class UserService(IDbRepository dbRepository, IHashHelpers hashHelpers) :
                 throw new IncorrectDataException("Пароль должен быть длиннее 4 символов");
         }
 
-        existingUser.Password = hashHelpers.HashPassword(request.Password, existingUser.Salt);
+        existingUser.Password = hashHelper.HashPassword(request.Password, existingUser.Salt);
         existingUser.DateUpdated = DateTime.UtcNow;
 
         await dbRepository.SaveChangesAsync();
@@ -253,7 +253,7 @@ public class UserService(IDbRepository dbRepository, IHashHelpers hashHelpers) :
                 throw new EntityNotFoundException("Пароль не может содержать более 20 символов");
         }
 
-        existingUser.Password = hashHelpers.HashPassword(request.Password, existingUser.Salt);
+        existingUser.Password = hashHelper.HashPassword(request.Password, existingUser.Salt);
 
         await dbRepository.SaveChangesAsync();
     }
@@ -285,6 +285,23 @@ public class UserService(IDbRepository dbRepository, IHashHelpers hashHelpers) :
             throw new IncorrectDataException("Логин должен быть уникальным");
 
         existingUser.Login = request.Login;
+        await dbRepository.SaveChangesAsync();
+    }
+    
+    /// <summary>
+    /// Устанавливает статус удаления равный true
+    /// </summary>
+    /// <param name="id"></param>
+    /// <exception cref="EntityNotFoundException"></exception>
+    public async Task DeleteAccountAsync(Guid id)
+    {
+        var existingUser = await dbRepository.Get<User>().FirstOrDefaultAsync(x => x.Id == id);
+        if (existingUser == null)
+            throw new EntityNotFoundException("User not found");
+
+        existingUser.IsDeleted = true;
+        existingUser.DateUpdated = DateTime.UtcNow;
+
         await dbRepository.SaveChangesAsync();
     }
 }

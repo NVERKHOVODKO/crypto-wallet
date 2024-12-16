@@ -1,0 +1,764 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Back</name>
+    </assembly>
+    <members>
+        <member name="T:UP.Migrations.initial">
+            <inheritdoc />
+        </member>
+        <member name="M:UP.Migrations.initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:UP.Migrations.initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:UP.Migrations.initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:UP.Services.ServiceService">
+            <summary>
+            Сервис для работы с услугами
+            </summary>
+        </member>
+        <member name="M:UP.Services.ServiceService.#ctor(Repository.IDbRepository)">
+            <summary>
+            Сервис для работы с услугами
+            </summary>
+        </member>
+        <member name="M:UP.Services.ServiceService.GetServices">
+            <summary>
+            Получение 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UP.Services.IServiceService">
+            <summary>
+            Сервис для работы с услугами
+            </summary>
+        </member>
+        <member name="M:UP.Services.IServiceService.GetServices">
+            <summary>
+            Получение 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Back.Controllers.AdminController">
+            <summary>
+            Controller for managing administrative tasks
+            </summary>
+        </member>
+        <member name="M:Back.Controllers.AdminController.#ctor(Repository.IDbRepository,UP.Services.IAuthService)">
+            <summary>
+            Constructor for AdminController
+            </summary>
+            <param name="dbRepository">Instance of IDbRepository</param>
+            <param name="authService">Instance of IAuthService</param>
+        </member>
+        <member name="M:Back.Controllers.AdminController.BlockUser(System.Guid,System.String)">
+            <summary>
+            Блокирует пользователя по указанному идентификатору и добавляет причину блокировки.
+            </summary>
+            <param name="id">Идентификатор пользователя.</param>
+            <param name="reason">Причина блокировки пользователя.</param>
+            <returns>Сообщение о блокировке пользователя.</returns>
+        </member>
+        <member name="M:Back.Controllers.AdminController.DeleteUser(System.Guid)">
+            <summary>
+            Удаляет пользователя по указанному идентификатору.
+            </summary>
+            <param name="id">Идентификатор пользователя.</param>
+            <returns>Сообщение об удалении пользователя.</returns>
+        </member>
+        <member name="M:Back.Controllers.AdminController.SetStatusDel(System.Guid,System.Boolean)">
+            <summary>
+            Устанавливает статус удаления пользователя (активен/удален) по указанному идентификатору.
+            </summary>
+            <param name="id">Идентификатор пользователя.</param>
+            <param name="status">Новый статус пользователя (активен/удален).</param>
+            <returns>Сообщение об успешном изменении статуса пользователя.</returns>
+        </member>
+        <member name="M:Back.Controllers.AdminController.SetStatusBlock(System.Guid,System.Boolean)">
+            <summary>
+            Устанавливает статус блокировки пользователя (активен/заблокирован) по указанному идентификатору.
+            </summary>
+            <param name="id">Идентификатор пользователя.</param>
+            <param name="status">Новый статус блокировки пользователя (активен/заблокирован).</param>
+            <returns>Сообщение об успешном изменении статуса пользователя.</returns>
+        </member>
+        <member name="M:Back.Controllers.AdminController.GetUserList">
+            <summary>
+            Получает список всех пользователей.
+            </summary>
+            <returns>Список пользователей.</returns>
+        </member>
+        <member name="M:Back.Controllers.AdminController.GetUserById(System.Guid)">
+            <summary>
+            Получает информацию о пользователе по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор пользователя.</param>
+            <returns>Информация о пользователе.</returns>
+        </member>
+        <member name="M:Back.Controllers.AdminController.GetCoins">
+            <summary>
+            Получает список всех монет.
+            </summary>
+            <returns>Список монет.</returns>
+        </member>
+        <member name="M:Back.Controllers.AdminController.GetAllCoins">
+            <summary>
+            Получает список всех активных монет.
+            </summary>
+            <returns>Список активных монет.</returns>
+        </member>
+        <member name="M:Back.Controllers.AdminController.GetCoinsDict">
+            <summary>
+            Получает словарь активных монет в виде "сокращенное название монеты" - "полное название монеты".
+            </summary>
+            <returns>Словарь активных монет.</returns>
+        </member>
+        <member name="M:Back.Controllers.AdminController.SetCoinStatus(System.String,System.Boolean)">
+            <summary>
+            Устанавливает статус активации/деактивации монеты по её сокращенному названию.
+            </summary>
+            <param name="coinName">Сокращенное название монеты.</param>
+            <param name="status">Новый статус монеты (активна/неактивна).</param>
+            <returns>Сообщение о успешном обновлении статуса монеты.</returns>
+        </member>
+        <member name="M:Back.Controllers.AdminController.GetToken(System.String)">
+            <summary>
+            Get token for specified email
+            </summary>
+            <param name="email">Email address</param>
+            <returns>Generated token</returns>
+        </member>
+        <member name="M:Back.Controllers.AuthorizationController.Login(UP.DTO.AuthenticationRequest)">
+            <summary>
+            Аутентификация пользователя.
+            </summary>
+            <param name="request">Данные для авторизации.</param>
+            <returns>Информация о пользователе.</returns>
+            <response code="200">Возвращает информацию о пользователе.</response>
+            <response code="404">Пользователь не найден или аккаунт заблокирован.</response>
+        </member>
+        <member name="M:Back.Controllers.AuthorizationController.RegisterNewUser(UP.DTO.RegisterRequest)">
+            <summary>
+            Регистрация нового пользователя.
+            </summary>
+            <param name="request">Данные для регистрации.</param>
+            <returns>Сообщение о результатах регистрации.</returns>
+            <response code="200">Успешная регистрация.</response>
+            <response code="400">Ошибки валидации данных.</response>
+        </member>
+        <member name="T:Back.Controllers.CurrencyController">
+            <summary>
+            Контроллер для управления валютами, балансами пользователей и получения информации о криптовалютах.
+            </summary>
+        </member>
+        <member name="M:Back.Controllers.CurrencyController.GetUserCoins(System.Guid)">
+            <summary>
+            Возвращает список монет пользователя.
+            </summary>
+            <param name="userId">Идентификатор пользователя</param>
+            <returns>Список монет пользователя</returns>
+        </member>
+        <member name="M:Back.Controllers.CurrencyController.GetUserCoinsFull(System.Guid)">
+            <summary>
+            Возвращает полную информацию о монетах пользователя.
+            </summary>
+            <param name="userId">Идентификатор пользователя</param>
+            <returns>Полная информация о монетах пользователя</returns>
+        </member>
+        <member name="M:Back.Controllers.CurrencyController.GetQuantityAfterConversion(System.String,System.String,System.Double,System.Guid)">
+            <summary>
+            Конвертирует количество одной валюты в другую.
+            </summary>
+            <param name="shortNameStart">Краткое имя исходной валюты</param>
+            <param name="shortNameFinal">Краткое имя целевой валюты</param>
+            <param name="quantity">Количество исходной валюты</param>
+            <param name="userId">Идентификатор пользователя</param>
+            <returns>Конвертированное количество целевой валюты</returns>
+        </member>
+        <member name="M:Back.Controllers.CurrencyController.GetUserBalance(System.Guid)">
+            <summary>
+            Возвращает баланс пользователя.
+            </summary>
+            <param name="userId">Идентификатор пользователя</param>
+            <returns>Баланс пользователя</returns>
+        </member>
+        <member name="M:Back.Controllers.CurrencyController.GetCoinQuantityInUserWallet(System.Guid,System.String)">
+            <summary>
+            Возвращает количество монет определенного типа в кошельке пользователя.
+            </summary>
+            <param name="userId">Идентификатор пользователя</param>
+            <param name="coinName">Название монеты</param>
+            <returns>Количество монет</returns>
+        </member>
+        <member name="M:Back.Controllers.CurrencyController.GetCoinPrice(System.Double,System.String)">
+            <summary>
+            Возвращает текущую цену монеты.
+            </summary>
+            <param name="quantity">Количество монет</param>
+            <param name="coinName">Название монеты</param>
+            <returns>Текущая цена монеты</returns>
+        </member>
+        <member name="M:Back.Controllers.CurrencyController.GetCoinRatio(System.String)">
+            <summary>
+            Возвращает историю цен монеты по краткому названию.
+            </summary>
+            <param name="shortName">Краткое имя монеты</param>
+            <returns>Анализ изменений цен</returns>
+        </member>
+        <member name="M:Back.Controllers.CurrencyController.GetCoinsList">
+            <summary>
+            Возвращает активный список криптовалют.
+            </summary>
+            <returns>Список активных криптовалют с их информацией</returns>
+        </member>
+        <member name="M:Back.Controllers.EmailController.SendVerificationCode(TestApplication.DTO.SendVerificationCodeRequest)">
+            <summary>
+            Отправляет код верификации на указанный email.
+            </summary>
+            <param name="request">Запрос на отправку кода верификации.</param>
+            <returns>Результат операции отправки кода верификации.</returns>
+        </member>
+        <member name="M:Back.Controllers.EmailController.VerifyEmail(TestApplication.DTO.VerifyEmailRequest)">
+            <summary>
+            Подтверждает адрес электронной почты пользователя по коду верификации.
+            </summary>
+            <param name="request">Запрос на подтверждение адреса электронной почты.</param>
+            <returns>Результат операции подтверждения адреса электронной почты.</returns>
+        </member>
+        <member name="M:Back.Controllers.EmailController.ConfirmRestorePassword(TestApplication.DTO.VerifyEmailRequest)">
+            <summary>
+            Подтверждает восстановление пароля пользователя по коду верификации.
+            </summary>
+            <param name="request">Запрос на подтверждение восстановления пароля.</param>
+            <returns>Результат операции подтверждения восстановления пароля.</returns>
+        </member>
+        <member name="M:Back.Controllers.EmailController.RestorePassword(TestApplication.DTO.RestorePasswordRequest)">
+            <summary>
+            Восстанавливает пароль пользователя по запросу на восстановление пароля.
+            </summary>
+            <param name="request">Запрос на восстановление пароля.</param>
+            <returns>Результат операции восстановления пароля пользователя.</returns>
+        </member>
+        <member name="M:Back.Controllers.EmailController.SendMessage(UP.DTO.SendMessageRequest)">
+            <summary>
+            Отправляет сообщение о блокировке пользователю.
+            </summary>
+            <param name="request">Запрос на отправку сообщения о блокировке.</param>
+            <returns>Результат операции отправки сообщения о блокировке.</returns>
+        </member>
+        <member name="T:Back.Controllers.ServiceController">
+            <summary>
+            Контроллер для работы с внешними сервисами
+            </summary>
+            <param name="serviceService"></param>
+        </member>
+        <member name="M:Back.Controllers.ServiceController.#ctor(UP.Services.IServiceService)">
+            <summary>
+            Контроллер для работы с внешними сервисами
+            </summary>
+            <param name="serviceService"></param>
+        </member>
+        <member name="M:Back.Controllers.ServiceController.GetServices">
+            <summary>
+            Получает список всех сервисов.
+            </summary>
+            <returns>Список сервисов.</returns>
+            <response code="200">Возвращает список всех доступных сервисов.</response>
+            <response code="500">Серверная ошибка.</response>
+        </member>
+        <member name="M:Back.Controllers.TransactionController.GetCoinQuantity(System.String,System.Double)">
+            <summary>
+            Gets the equivalent coin quantity for a given amount in USD.
+            </summary>
+            <param name="coinName">Name of the coin.</param>
+            <param name="quantityUSD">Amount in USD.</param>
+            <returns>The equivalent quantity of the specified coin.</returns>
+        </member>
+        <member name="M:Back.Controllers.TransactionController.GetUserList(System.Guid)">
+            <summary>
+            Retrieves the user's conversation history based on the user's ID.
+            </summary>
+            <param name="id">User's unique ID.</param>
+            <returns>A list of the user's transaction conversations.</returns>
+        </member>
+        <member name="M:Back.Controllers.TransactionController.GetUserDepositHistory(System.Guid)">
+            <summary>
+            Retrieves the user's deposit history.
+            </summary>
+            <param name="id">User's unique ID.</param>
+            <returns>A list of the user's deposit history.</returns>
+        </member>
+        <member name="M:Back.Controllers.TransactionController.Convert(UP.DTO.ConvertRequest)">
+            <summary>
+            Converts a specific amount of one coin into another.
+            </summary>
+            <param name="request">The conversion request data.</param>
+            <returns>Success or failure message based on the conversion process.</returns>
+        </member>
+        <member name="M:Back.Controllers.TransactionController.BuyCrypto(UP.DTO.BuyCryptoRequest)">
+            <summary>
+            Allows a user to buy cryptocurrency.
+            </summary>
+            <param name="request">The purchase request data.</param>
+            <returns>Success or failure message based on the purchase process.</returns>
+        </member>
+        <member name="M:Back.Controllers.TransactionController.SellCrypto(UP.DTO.SellCryptoRequest)">
+            <summary>
+            Allows a user to sell cryptocurrency.
+            </summary>
+            <param name="request">The sell request data.</param>
+            <returns>Success or failure message based on the sell process.</returns>
+        </member>
+        <member name="M:Back.Controllers.TransactionController.SendCrypto(UP.DTO.SendCryptoRequest)">
+            <summary>
+            Transfers cryptocurrency from one user to another.
+            </summary>
+            <param name="request">The transfer request data.</param>
+            <returns>Success or failure message based on the transfer process.</returns>
+        </member>
+        <member name="M:Back.Controllers.TransactionController.ReplenishTheBalance(UP.DTO.ReplenishTheBalanceRequest)">
+            <summary>
+            Пополнение баланса пользователя
+            </summary>
+            <param name="request">Запрос для пополнения баланса</param>
+            <returns>Статус операции пополнения баланса</returns>
+        </member>
+        <member name="M:Back.Controllers.TransactionController.WithdrawUSDT(UP.DTO.WithdrawRequest)">
+            <summary>
+            Снятие USDT с баланса пользователя
+            </summary>
+            <param name="request">Запрос для снятия средств</param>
+            <returns>Статус операции снятия средств</returns>
+        </member>
+        <member name="M:Back.Controllers.TransactionController.GetUserWithdrawalsHistory(System.Guid)">
+            <summary>
+            Получение истории снятий средств пользователем
+            </summary>
+            <param name="userId">Идентификатор пользователя</param>
+            <returns>История снятий средств пользователя</returns>
+        </member>
+        <member name="M:Back.Controllers.TransactionController.GetUserTransactionsHistory(System.Guid)">
+            <summary>
+            Получение истории транзакций пользователя
+            </summary>
+            <param name="userId">Идентификатор пользователя</param>
+            <returns>История транзакций пользователя</returns>
+        </member>
+        <member name="T:Back.Controllers.UserController">
+            <summary>
+            Контроллер для работы с пользователями
+            </summary>
+            <param name="dbRepository"></param>
+            <param name="userService"></param>
+        </member>
+        <member name="M:Back.Controllers.UserController.#ctor(Back.Services.IUserService)">
+            <summary>
+            Контроллер для работы с пользователями
+            </summary>
+            <param name="dbRepository"></param>
+            <param name="userService"></param>
+        </member>
+        <member name="M:Back.Controllers.UserController.EditLoginAsync(UP.DTO.EditUserLoginRequest)">
+            <summary>
+            Редактирует логин пользователя.
+            </summary>
+            <param name="request">Объект, содержащий новый логин пользователя.</param>
+            <returns>Статус операции и сообщение о результате.</returns>
+            <response code="200">Логин успешно изменен.</response>
+            <response code="400">Неверные данные для логина.</response>
+        </member>
+        <member name="M:Back.Controllers.UserController.IsLoginUniqueAsync(System.String,System.Guid)">
+            <summary>
+            Проверяет уникальность логина для пользователя.
+            </summary>
+            <param name="login">Логин, который нужно проверить.</param>
+            <param name="id">ID пользователя, который исключается из проверки.</param>
+            <returns>True, если логин уникален, иначе False.</returns>
+            <response code="200">Результат проверки логина (true/false).</response>
+            <response code="400">Неверные параметры запроса.</response>
+        </member>
+        <member name="M:Back.Controllers.UserController.EditPasswordAsync(UP.DTO.EditUserPasswordRequest)">
+            <summary>
+            Редактирует пароль пользователя.
+            </summary>
+            <param name="request">Объект, содержащий новый пароль пользователя.</param>
+            <returns>Статус операции и сообщение о результате.</returns>
+            <response code="200">Пароль успешно изменен.</response>
+            <response code="400">Неверный формат пароля.</response>
+        </member>
+        <member name="M:Back.Controllers.UserController.EditEmailAsync(UP.DTO.EditUserEmailRequest)">
+            <summary>
+            Редактирует email пользователя.
+            </summary>
+            <param name="request">Объект, содержащий новый email пользователя.</param>
+            <returns>Статус операции и сообщение о результате.</returns>
+            <response code="200">Email успешно изменен.</response>
+            <response code="400">Неверный или уже существующий email.</response>
+        </member>
+        <member name="M:Back.Controllers.UserController.GetUserLoginHistory(System.Guid)">
+            <summary>
+            Получает историю логинов пользователя по его ID.
+            </summary>
+            <param name="id">ID пользователя для поиска его истории логинов.</param>
+            <returns>Список логинов пользователя.</returns>
+            <response code="200">Список истории логинов пользователя.</response>
+            <response code="404">Пользователь не найден.</response>
+        </member>
+        <member name="M:Back.Controllers.UserController.GetUserLoginByIdAsync(System.Guid)">
+            <summary>
+            Получает текущий логин пользователя по его ID.
+            </summary>
+            <param name="id">ID пользователя.</param>
+            <returns>Текущий логин пользователя.</returns>
+            <response code="200">Текущий логин пользователя.</response>
+            <response code="404">Пользователь не найден.</response>
+        </member>
+        <member name="M:Back.Controllers.UserController.DeleteAccount(System.Guid)">
+            <summary>
+            Удаляет аккаунт пользователя по его ID.
+            </summary>
+            <param name="id">ID пользователя для удаления аккаунта.</param>
+            <returns>Сообщение о результате операции.</returns>
+            <response code="200">Пользователь успешно удален.</response>
+            <response code="404">Пользователь не найден.</response>
+        </member>
+        <member name="M:Back.Controllers.UserController.ChangeLoginAsync(System.Guid,System.String)">
+            <summary>
+            Меняет логин пользователя.
+            </summary>
+            <param name="id">ID пользователя.</param>
+            <param name="newLogin">Новый логин для пользователя.</param>
+            <returns>Сообщение о результате операции.</returns>
+            <response code="200">Логин успешно изменен.</response>
+            <response code="400">Неверный или уже используемый логин.</response>
+        </member>
+        <member name="M:Back.Controllers.UserController.ChangePasswordAsync(UP.DTO.ChangePasswordRequest)">
+            <summary>
+            Change the password of a user.
+            </summary>
+            <param name="request">Request containing the user ID and new password.</param>
+            <returns>Status of the operation.</returns>
+        </member>
+        <member name="M:Back.Controllers.UserController.CreateAsync(Api.OpenAI.DTO.CreateUserRequest)">
+            <summary>
+            Создает нового пользователя.
+            </summary>
+            <param name="request">Объект с данными для создания пользователя.</param>
+            <returns>Сообщение о результате создания пользователя.</returns>
+            <response code="200">Пользователь успешно создан.</response>
+            <response code="400">Некорректные данные для создания пользователя.</response>
+        </member>
+        <member name="M:Back.Controllers.UserController.IsEmailUniqueAsync(System.String,System.Guid)">
+            <param name="email">Email для проверки.</param>
+            <param name="id">ID пользователя, для которого проверяется уникальность.</param>
+            <returns>True, если email уникален, иначе False.</returns>
+            <response code="200">Результат проверки email (true/false).</response>
+            <response code="400">Неверные параметры запроса.</response>
+        </member>
+        <member name="M:Back.Controllers.UserController.IsLoginUniqueAsync(System.String)">
+            <summary>
+            Проверяет уникальность логина для пользователя.
+            </summary>
+            <param name="login">Логин, который нужно проверить на уникальность.</param>
+            <returns>True, если логин уникален, иначе False.</returns>
+            <response code="200">Результат проверки логина (true/false).</response>
+            <response code="400">Неверные параметры запроса.</response>
+        </member>
+        <member name="T:Back.Services.UserService">
+            <summary>
+            Сервис для работы с пользователями. Предоставляет методы проверки уникальности данных,
+            создания, редактирования и получения информации о пользователях.
+            </summary>
+            <param name="dbRepository">Репозиторий для взаимодействия с базой данных.</param>
+            <param name="hashHelper">Сервис для работы с хэшированием.</param>
+        </member>
+        <member name="M:Back.Services.UserService.#ctor(Repository.IDbRepository,Back.Helpers.IHashHelper)">
+            <summary>
+            Сервис для работы с пользователями. Предоставляет методы проверки уникальности данных,
+            создания, редактирования и получения информации о пользователях.
+            </summary>
+            <param name="dbRepository">Репозиторий для взаимодействия с базой данных.</param>
+            <param name="hashHelper">Сервис для работы с хэшированием.</param>
+        </member>
+        <member name="M:Back.Services.UserService.IsLoginUniqueAsync(System.String)">
+            <summary>
+            Проверяет, уникален ли указанный логин.
+            </summary>
+            <param name="login">Логин для проверки.</param>
+            <returns>True, если логин уникален, иначе False.</returns>
+        </member>
+        <member name="M:Back.Services.UserService.IsLoginUniqueAsync(System.String,System.Guid)">
+            <summary>
+            Проверяет, уникален ли указанный логин, исключая пользователя с заданным ID.
+            </summary>
+            <param name="login">Логин для проверки.</param>
+            <param name="id">ID пользователя, которого нужно исключить из проверки.</param>
+            <returns>True, если логин уникален, иначе False.</returns>
+        </member>
+        <member name="M:Back.Services.UserService.IsEmailUniqueAsync(System.String,System.Guid)">
+            <summary>
+            Проверяет, уникален ли указанный email, исключая пользователя с заданным ID.
+            </summary>
+            <param name="email">Email для проверки.</param>
+            <param name="id">ID пользователя, которого нужно исключить из проверки.</param>
+            <returns>True, если email уникален, иначе False.</returns>
+        </member>
+        <member name="M:Back.Services.UserService.CreateAsync(Api.OpenAI.DTO.CreateUserRequest)">
+            <summary>
+            Создает нового пользователя.
+            </summary>
+            <param name="request">Запрос на создание пользователя.</param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">Выбрасывается, если данные пользователя некорректны.</exception>
+            <exception cref="T:UP.Exceptions.IncorrectDataException">Выбрасывается, если никнейм не уникален.</exception>
+        </member>
+        <member name="M:Back.Services.UserService.ChangePasswordAsync(UP.DTO.ChangePasswordRequest)">
+            <summary>
+            Изменяет пароль пользователя.
+            </summary>
+            <param name="request">Запрос на изменение пароля.</param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">Выбрасывается, если пользователь не найден.</exception>
+            <exception cref="T:UP.Exceptions.IncorrectDataException">Выбрасывается, если пароли не совпадают или некорректны.</exception>
+        </member>
+        <member name="M:Back.Services.UserService.ChangeLoginAsync(System.Guid,System.String)">
+            <summary>
+            Изменяет логин пользователя.
+            </summary>
+            <param name="id">ID пользователя.</param>
+            <param name="newLogin">Новый логин пользователя.</param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">Выбрасывается, если пользователь не найден.</exception>
+            <exception cref="T:UP.Exceptions.IncorrectDataException">Выбрасывается, если логин некорректен.</exception>
+        </member>
+        <member name="M:Back.Services.UserService.GetUserLoginByIdAsync(System.Guid)">
+            <summary>
+            Получает логин пользователя по его ID.
+            </summary>
+            <param name="id">ID пользователя.</param>
+            <returns>Логин пользователя.</returns>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">Выбрасывается, если пользователь не найден.</exception>
+        </member>
+        <member name="M:Back.Services.UserService.GetUserLoginHistoryAsync(System.Guid)">
+            <summary>
+            Получает историю логинов пользователя.
+            </summary>
+            <param name="id">ID пользователя.</param>
+            <returns>Список записей истории логинов.</returns>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">Выбрасывается, если история логинов отсутствует.</exception>
+        </member>
+        <member name="M:Back.Services.UserService.EditUserEmailAsync(UP.DTO.EditUserEmailRequest)">
+            <summary>
+            Изменяет адрес электронной почты пользователя.
+            </summary>
+            <param name="request">Запрос с данными для изменения адреса электронной почты пользователя.</param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">
+            Выбрасывается, если пользователь не найден.
+            </exception>
+            <exception cref="T:UP.Exceptions.IncorrectDataException">
+            Выбрасывается, если введенный адрес электронной почты пуст, не уникален, не соответствует требованиям длины
+            или имеет некорректный формат.
+            </exception>
+        </member>
+        <member name="M:Back.Services.UserService.IsEmailValid(System.String)">
+            <summary>
+            Проверяет валидность email.
+            </summary>
+            <param name="email">Email для проверки.</param>
+            <returns>True, если email валиден, иначе False.</returns>
+        </member>
+        <member name="M:Back.Services.UserService.EditUserPasswordAsync(UP.DTO.EditUserPasswordRequest)">
+            <summary>
+            Изменяет пароль пользователя.
+            </summary>
+            <param name="request">Запрос с данными для изменения пароля пользователя.</param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">
+            Выбрасывается, если пользователь не найден или пароль не задан,
+            либо если пароль не соответствует требованиям по длине.
+            </exception>
+        </member>
+        <member name="M:Back.Services.UserService.EditLoginAsync(UP.DTO.EditUserLoginRequest)">
+            <summary>
+            Редактирует логин пользователя.
+            </summary>
+            <param name="request">Запрос с данными для изменения логина пользователя.</param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">Выбрасывается, если пользователь не найден или логин не задан.</exception>
+            <exception cref="T:UP.Exceptions.IncorrectDataException">Выбрасывается, если логин не уникален.</exception>
+        </member>
+        <member name="M:Back.Services.UserService.DeleteAccountAsync(System.Guid)">
+            <summary>
+            Устанавливает статус удаления равный true
+            </summary>
+            <param name="id"></param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException"></exception>
+        </member>
+        <member name="T:Back.Services.IUserService">
+            <summary>
+            Сервис для работы с пользователями. Предоставляет методы проверки уникальности данных,
+            создания, редактирования и получения информации о пользователях.
+            </summary>
+            <param name="dbRepository">Репозиторий для взаимодействия с базой данных.</param>
+            <param name="hashHelper">Сервис для работы с хэшированием.</param>
+        </member>
+        <member name="M:Back.Services.IUserService.IsLoginUniqueAsync(System.String)">
+            <summary>
+            Проверяет, уникален ли указанный логин.
+            </summary>
+            <param name="login">Логин для проверки.</param>
+            <returns>True, если логин уникален, иначе False.</returns>
+        </member>
+        <member name="M:Back.Services.IUserService.IsLoginUniqueAsync(System.String,System.Guid)">
+            <summary>
+            Проверяет, уникален ли указанный логин, исключая пользователя с заданным ID.
+            </summary>
+            <param name="login">Логин для проверки.</param>
+            <param name="id">ID пользователя, которого нужно исключить из проверки.</param>
+            <returns>True, если логин уникален, иначе False.</returns>
+        </member>
+        <member name="M:Back.Services.IUserService.IsEmailUniqueAsync(System.String,System.Guid)">
+            <summary>
+            Проверяет, уникален ли указанный email, исключая пользователя с заданным ID.
+            </summary>
+            <param name="email">Email для проверки.</param>
+            <param name="id">ID пользователя, которого нужно исключить из проверки.</param>
+            <returns>True, если email уникален, иначе False.</returns>
+        </member>
+        <member name="M:Back.Services.IUserService.CreateAsync(Api.OpenAI.DTO.CreateUserRequest)">
+            <summary>
+            Создает нового пользователя.
+            </summary>
+            <param name="request">Запрос на создание пользователя.</param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">Выбрасывается, если данные пользователя некорректны.</exception>
+            <exception cref="T:UP.Exceptions.IncorrectDataException">Выбрасывается, если никнейм не уникален.</exception>
+        </member>
+        <member name="M:Back.Services.IUserService.ChangePasswordAsync(UP.DTO.ChangePasswordRequest)">
+            <summary>
+            Изменяет пароль пользователя.
+            </summary>
+            <param name="request">Запрос на изменение пароля.</param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">Выбрасывается, если пользователь не найден.</exception>
+            <exception cref="T:UP.Exceptions.IncorrectDataException">Выбрасывается, если пароли не совпадают или некорректны.</exception>
+        </member>
+        <member name="M:Back.Services.IUserService.ChangeLoginAsync(System.Guid,System.String)">
+            <summary>
+            Изменяет логин пользователя.
+            </summary>
+            <param name="id">ID пользователя.</param>
+            <param name="newLogin">Новый логин пользователя.</param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">Выбрасывается, если пользователь не найден.</exception>
+            <exception cref="T:UP.Exceptions.IncorrectDataException">Выбрасывается, если логин некорректен.</exception>
+        </member>
+        <member name="M:Back.Services.IUserService.GetUserLoginByIdAsync(System.Guid)">
+            <summary>
+            Получает логин пользователя по его ID.
+            </summary>
+            <param name="id">ID пользователя.</param>
+            <returns>Логин пользователя.</returns>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">Выбрасывается, если пользователь не найден.</exception>
+        </member>
+        <member name="M:Back.Services.IUserService.GetUserLoginHistoryAsync(System.Guid)">
+            <summary>
+            Получает историю логинов пользователя.
+            </summary>
+            <param name="id">ID пользователя.</param>
+            <returns>Список записей истории логинов.</returns>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">Выбрасывается, если история логинов отсутствует.</exception>
+        </member>
+        <member name="M:Back.Services.IUserService.EditUserEmailAsync(UP.DTO.EditUserEmailRequest)">
+            <summary>
+            Изменяет адрес электронной почты пользователя.
+            </summary>
+            <param name="request">Запрос с данными для изменения адреса электронной почты пользователя.</param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">
+            Выбрасывается, если пользователь не найден.
+            </exception>
+            <exception cref="T:UP.Exceptions.IncorrectDataException">
+            Выбрасывается, если введенный адрес электронной почты пуст, не уникален, не соответствует требованиям длины
+            или имеет некорректный формат.
+            </exception>
+        </member>
+        <member name="M:Back.Services.IUserService.IsEmailValid(System.String)">
+            <summary>
+            Проверяет валидность email.
+            </summary>
+            <param name="email">Email для проверки.</param>
+            <returns>True, если email валиден, иначе False.</returns>
+        </member>
+        <member name="M:Back.Services.IUserService.EditUserPasswordAsync(UP.DTO.EditUserPasswordRequest)">
+            <summary>
+            Изменяет пароль пользователя.
+            </summary>
+            <param name="request">Запрос с данными для изменения пароля пользователя.</param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">
+            Выбрасывается, если пользователь не найден или пароль не задан,
+            либо если пароль не соответствует требованиям по длине.
+            </exception>
+        </member>
+        <member name="M:Back.Services.IUserService.EditLoginAsync(UP.DTO.EditUserLoginRequest)">
+            <summary>
+            Редактирует логин пользователя.
+            </summary>
+            <param name="request">Запрос с данными для изменения логина пользователя.</param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException">Выбрасывается, если пользователь не найден или логин не задан.</exception>
+            <exception cref="T:UP.Exceptions.IncorrectDataException">Выбрасывается, если логин не уникален.</exception>
+        </member>
+        <member name="M:Back.Services.IUserService.DeleteAccountAsync(System.Guid)">
+            <summary>
+            Устанавливает статус удаления равный true
+            </summary>
+            <param name="id"></param>
+            <exception cref="T:UP.Exceptions.EntityNotFoundException"></exception>
+        </member>
+        <member name="T:AutoInterfaceAttributes.AutoInterfaceAttribute">
+            <summary>
+            Generates an interface for the decorated class/struct.
+            </summary>
+        </member>
+        <member name="P:AutoInterfaceAttributes.AutoInterfaceAttribute.Name">
+            <summary>
+            <para>The name of the generated interface.</para>
+            <para>Default is "I{ClassName}"</para>
+            </summary>
+        </member>
+        <member name="P:AutoInterfaceAttributes.AutoInterfaceAttribute.Modifier">
+            <summary>
+            <para>The modifier(s) for the interface.</para>
+            <para>Deault is "public partial"</para>
+            </summary>
+        </member>
+        <member name="P:AutoInterfaceAttributes.AutoInterfaceAttribute.Namespace">
+            <summary>
+            <para>The namespace declaration for the interface.</para>
+            <para>If empty string, no namespace directive will be used (global namespace).<br />
+            Default (if not present) it will be mapped to the same namespace as the namespace of the class/struct.</para>
+            </summary>
+        </member>
+        <member name="P:AutoInterfaceAttributes.AutoInterfaceAttribute.Inheritance">
+            <summary>
+            <para>interface inheritance: Name(s) of interfaces this interface will inherit.</para>
+            <para>Default is Array.Empty</para>
+            </summary>
+        </member>
+        <member name="P:AutoInterfaceAttributes.AutoInterfaceAttribute.Nested">
+            <summary>
+            <para>
+            The Classes, structs or interfaces containing the generated interface.<br />
+            e.g. ["public sealed partial class Example"] will wrap the interface with that expression.
+            </para>
+            <para>Default is Array.Empty</para>
+            </summary>
+        </member>
+        <member name="P:AutoInterfaceAttributes.AutoInterfaceAttribute.StaticMembers">
+            <summary>
+            <para>If enabled, static members get accepted and are generating "static abstract" members.</para>
+            <para>Default is false</para>
+            </summary>
+        </member>
+        <member name="T:AutoInterfaceAttributes.IgnoreAutoInterfaceAttribute">
+            <summary>
+            The decorated member will be Ignored by the generator.
+            </summary>
+        </member>
+    </members>
+</doc>

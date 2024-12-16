@@ -1,7 +1,4 @@
-using UP.Helpers;
-
 var builder = WebApplication.CreateBuilder(args);
-
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -47,7 +44,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.AddScoped<IDbRepository, DbRepository>();
-builder.Services.AddScoped<IHashHelpers, HashHelpers>();
+builder.Services.AddScoped<IHashHelper, HashHelper>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICurrencyRepository, CurrencyRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();

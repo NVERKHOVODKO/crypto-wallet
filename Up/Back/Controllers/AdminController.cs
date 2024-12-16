@@ -1,6 +1,4 @@
-﻿using UP.Exceptions;
-
-namespace UP.Controllers;
+﻿namespace Back.Controllers;
 
 /// <summary>
 /// Controller for managing administrative tasks

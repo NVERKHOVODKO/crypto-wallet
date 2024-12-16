@@ -1,4 +1,4 @@
-﻿namespace UP.Controllers;
+﻿namespace Back.Controllers;
 
 /// <summary>
 /// Контроллер для работы с внешними сервисами

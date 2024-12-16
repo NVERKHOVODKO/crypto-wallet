@@ -1,4 +1,4 @@
-﻿namespace UP.Controllers;
+﻿namespace Back.Controllers;
 
 [ApiController]
 [Route("[controller]")]

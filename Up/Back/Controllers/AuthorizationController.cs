@@ -1,20 +1,20 @@
-﻿using UP.Exceptions;
+﻿using Back.Handlers;
 
-namespace UP.Controllers;
+namespace Back.Controllers;
 
 [ApiController]
 [Route("[controller]")]
 public class AuthorizationController : ControllerBase
 {
     private readonly IDbRepository _dbRepository;
-    private readonly IHashHelpers _hashHelpers;
+    private readonly IHashHelper _hashHelper;
 
     public AuthorizationController(
         IDbRepository dbRepository,
-        IHashHelpers hashHelpers)
+        IHashHelper hashHelper)
     {
         _dbRepository = dbRepository;
-        _hashHelpers = hashHelpers;
+        _hashHelper = hashHelper;
     }
 
     /// <summary>
@@ -87,11 +87,11 @@ public class AuthorizationController : ControllerBase
         if (await _dbRepository.Get<User>().FirstOrDefaultAsync(x => x.Login == request.Login) != null)
             throw new IncorrectDataException("Логин уже используется");
 
-        var salt = _hashHelpers.GenerateSalt(30);
+        var salt = _hashHelper.GenerateSalt(30);
         var entity = new User
         {
             Login = request.Login,
-            Password = _hashHelpers.HashPassword(request.Password, salt),
+            Password = _hashHelper.HashPassword(request.Password, salt),
             Email = request.Email,
             DateCreated = DateTime.UtcNow,
             IsDeleted = false,

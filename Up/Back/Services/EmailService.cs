@@ -1,4 +1,6 @@
-﻿namespace UP.Services;
+﻿using Back.Handlers;
+
+namespace UP.Services;
 
 [AutoInterface]
 public class EmailService : IEmailService

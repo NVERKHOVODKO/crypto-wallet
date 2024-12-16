@@ -1,0 +1,682 @@
+a
+UP.Data.DataInitializerobject>
+DataInitializer())UP.Data.DataInitializer.DataInitializer()Á
+&UP.Migrations.DataContextModelSnapshot:Microsoft.EntityFrameworkCore.Infrastructure.ModelSnapshotobjectó
+6BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)]UP.Migrations.DataContextModelSnapshot.BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)_
+DataContextModelSnapshot()AUP.Migrations.DataContextModelSnapshot.DataContextModelSnapshot()»
+UP.Migrations.initial2Microsoft.EntityFrameworkCore.Migrations.Migrationobjectî
+=Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)SUP.Migrations.initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)ò
+?Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)UUP.Migrations.initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)í
+<BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)RUP.Migrations.initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder),
+	initial()UP.Migrations.initial.initial()Û
+UP.DTO.AuthenticationRequestobjectk
+%AuthenticationRequest(string, string)BUP.DTO.AuthenticationRequest.AuthenticationRequest(string, string)3
+	Login.get&UP.DTO.AuthenticationRequest.Login.get3
+	Login.set&UP.DTO.AuthenticationRequest.Login.set9
+Password.get)UP.DTO.AuthenticationRequest.Password.get9
+Password.set)UP.DTO.AuthenticationRequest.Password.set˛
+UP.Controllers.AdminController'Microsoft.AspNetCore.Mvc.ControllerBaseobjectø
+NAdminController(Repository.IDbRepository, UP.Services.Interfaces.IAuthService)mUP.Controllers.AdminController.AdminController(Repository.IDbRepository, UP.Services.Interfaces.IAuthService)_
+BlockUser(System.Guid, string)=UP.Controllers.AdminController.BlockUser(System.Guid, string)Q
+DeleteUser(System.Guid)6UP.Controllers.AdminController.DeleteUser(System.Guid)a
+SetStatusDel(System.Guid, bool)>UP.Controllers.AdminController.SetStatusDel(System.Guid, bool)e
+!SetStatusBlock(System.Guid, bool)@UP.Controllers.AdminController.SetStatusBlock(System.Guid, bool)=
+GetUserList(),UP.Controllers.AdminController.GetUserList()S
+GetUserById(System.Guid)7UP.Controllers.AdminController.GetUserById(System.Guid)7
+
+GetCoins())UP.Controllers.AdminController.GetCoins()=
+GetAllCoins(),UP.Controllers.AdminController.GetAllCoins()?
+GetCoinsDict()-UP.Controllers.AdminController.GetCoinsDict()Y
+SetCoinStatus(string, bool):UP.Controllers.AdminController.SetCoinStatus(string, bool)C
+GetToken(string)/UP.Controllers.AdminController.GetToken(string)u
+UP.Migrations.APIobject6
+getPrice(string)"UP.Migrations.API.getPrice(string) 
+API()UP.Migrations.API.API()€
+ TestApplication.Data.DataContext'Microsoft.EntityFrameworkCore.DbContextobjectﬂ
+]DataContext(Microsoft.EntityFrameworkCore.DbContextOptions<TestApplication.Data.DataContext>)~TestApplication.Data.DataContext.DataContext(Microsoft.EntityFrameworkCore.DbContextOptions<TestApplication.Data.DataContext>)õ
+;OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)\TestApplication.Data.DataContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)7
+	Users.get*TestApplication.Data.DataContext.Users.get7
+	Users.set*TestApplication.Data.DataContext.Users.set?
+Blockings.get.TestApplication.Data.DataContext.Blockings.get?
+Blockings.set.TestApplication.Data.DataContext.Blockings.set7
+	Coins.get*TestApplication.Data.DataContext.Coins.get7
+	Coins.set*TestApplication.Data.DataContext.Coins.setC
+Conversions.get0TestApplication.Data.DataContext.Conversions.getC
+Conversions.set0TestApplication.Data.DataContext.Conversions.setI
+LoginHistories.get3TestApplication.Data.DataContext.LoginHistories.getI
+LoginHistories.set3TestApplication.Data.DataContext.LoginHistories.setU
+RestorePasswordCodes.get9TestApplication.Data.DataContext.RestorePasswordCodes.getU
+RestorePasswordCodes.set9TestApplication.Data.DataContext.RestorePasswordCodes.setO
+PreviousPasswords.get6TestApplication.Data.DataContext.PreviousPasswords.getO
+PreviousPasswords.set6TestApplication.Data.DataContext.PreviousPasswords.setK
+VerifyEmailCode.get4TestApplication.Data.DataContext.VerifyEmailCode.getK
+VerifyEmailCode.set4TestApplication.Data.DataContext.VerifyEmailCode.setE
+Transactions.get1TestApplication.Data.DataContext.Transactions.getE
+Transactions.set1TestApplication.Data.DataContext.Transactions.setC
+CoinHistory.get0TestApplication.Data.DataContext.CoinHistory.getC
+CoinHistory.set0TestApplication.Data.DataContext.CoinHistory.setA
+UsersCoins.get/TestApplication.Data.DataContext.UsersCoins.getA
+UsersCoins.set/TestApplication.Data.DataContext.UsersCoins.setC
+Withdrawals.get0TestApplication.Data.DataContext.Withdrawals.getC
+Withdrawals.set0TestApplication.Data.DataContext.Withdrawals.setI
+Replenishments.get3TestApplication.Data.DataContext.Replenishments.getI
+Replenishments.set3TestApplication.Data.DataContext.Replenishments.set=
+Services.get-TestApplication.Data.DataContext.Services.get=
+Services.set-TestApplication.Data.DataContext.Services.setG
+CoinListInfos.get2TestApplication.Data.DataContext.CoinListInfos.getG
+CoinListInfos.set2TestApplication.Data.DataContext.CoinListInfos.setc
+EmailVerificationCodeModels.get@TestApplication.Data.DataContext.EmailVerificationCodeModels.getc
+EmailVerificationCodeModels.set@TestApplication.Data.DataContext.EmailVerificationCodeModels.setá
+UP.DTO.AuthRequestobject1
+AuthRequest() UP.DTO.AuthRequest.AuthRequest())
+	Login.getUP.DTO.AuthRequest.Login.get)
+	Login.setUP.DTO.AuthRequest.Login.set/
+Password.getUP.DTO.AuthRequest.Password.get/
+Password.setUP.DTO.AuthRequest.Password.setá
+UP.DTO.AuthResponseobject4
+AuthResponse()"UP.DTO.AuthResponse.AuthResponse()*
+	Token.getUP.DTO.AuthResponse.Token.get*
+	Token.setUP.DTO.AuthResponse.Token.set,
+
+UserId.getUP.DTO.AuthResponse.UserId.get,
+
+UserId.setUP.DTO.AuthResponse.UserId.set3
+1UP.Migrations.Services.Interfaces.IServiceService’
+UP.DTO.BuyCryptoRequestobjectv
+-BuyCryptoRequest(System.Guid, string, double)EUP.DTO.BuyCryptoRequest.BuyCryptoRequest(System.Guid, string, double)0
+
+UserId.get"UP.DTO.BuyCryptoRequest.UserId.get0
+
+UserId.set"UP.DTO.BuyCryptoRequest.UserId.set4
+CoinName.get$UP.DTO.BuyCryptoRequest.CoinName.get4
+CoinName.set$UP.DTO.BuyCryptoRequest.CoinName.set4
+Quantity.get$UP.DTO.BuyCryptoRequest.Quantity.get4
+Quantity.set$UP.DTO.BuyCryptoRequest.Quantity.setÕ
+TestApplication.DTO.ErrorDtoobject5
+
+ErrorDto()'TestApplication.DTO.ErrorDto.ErrorDto()=
+StatusCode.get+TestApplication.DTO.ErrorDto.StatusCode.get=
+StatusCode.set+TestApplication.DTO.ErrorDto.StatusCode.set7
+Message.get(TestApplication.DTO.ErrorDto.Message.get7
+Message.set(TestApplication.DTO.ErrorDto.Message.setŸ
+UP.DTO.ChangePasswordRequestobjectO
+ChangePasswordRequest()4UP.DTO.ChangePasswordRequest.ChangePasswordRequest()-
+Id.get#UP.DTO.ChangePasswordRequest.Id.get-
+Id.set#UP.DTO.ChangePasswordRequest.Id.set9
+Password.get)UP.DTO.ChangePasswordRequest.Password.get9
+Password.set)UP.DTO.ChangePasswordRequest.Password.setE
+PasswordRepeat.get/UP.DTO.ChangePasswordRequest.PasswordRepeat.getE
+PasswordRepeat.set/UP.DTO.ChangePasswordRequest.PasswordRepeat.set≤
+UP.Models.CoinListobject[
+"CoinList(Repository.IDbRepository)5UP.Models.CoinList.CoinList(Repository.IDbRepository)7
+GetActiveCoins()#UP.Models.CoinList.GetActiveCoins()è
+*TestApplication.DTO.RestorePasswordCodeDtoobject_
+RestorePasswordCodeDto()CTestApplication.DTO.RestorePasswordCodeDto.RestorePasswordCodeDto();
+Id.get1TestApplication.DTO.RestorePasswordCodeDto.Id.get;
+Id.set1TestApplication.DTO.RestorePasswordCodeDto.Id.setΩ
+*TestApplication.DTO.RestorePasswordRequestobject_
+RestorePasswordRequest()CTestApplication.DTO.RestorePasswordRequest.RestorePasswordRequest()M
+NewPassword.get:TestApplication.DTO.RestorePasswordRequest.NewPassword.getM
+NewPassword.set:TestApplication.DTO.RestorePasswordRequest.NewPassword.setC
+
+UserId.get5TestApplication.DTO.RestorePasswordRequest.UserId.getC
+
+UserId.set5TestApplication.DTO.RestorePasswordRequest.UserId.set«
+UP.DTO.CoinRationResponseobjectF
+CoinRationResponse().UP.DTO.CoinRationResponse.CoinRationResponse():
+Persentage.get(UP.DTO.CoinRationResponse.Persentage.get:
+Persentage.set(UP.DTO.CoinRationResponse.Persentage.set0
+	Price.get#UP.DTO.CoinRationResponse.Price.get0
+	Price.set#UP.DTO.CoinRationResponse.Price.set◊
+UP.ModelsEF.CoinEntities.BaseModelobject!
+Coin()UP.ModelsEF.Coin.Coin()!
+Id.getUP.ModelsEF.Coin.Id.get!
+Id.setUP.ModelsEF.Coin.Id.set-
+Quantity.getUP.ModelsEF.Coin.Quantity.get-
+Quantity.setUP.ModelsEF.Coin.Quantity.set/
+Shortname.getUP.ModelsEF.Coin.Shortname.get/
+Shortname.setUP.ModelsEF.Coin.Shortname.set≠
+/TestApplication.DTO.SendVerificationCodeRequestobjectn
+SendVerificationCodeRequest()MTestApplication.DTO.SendVerificationCodeRequest.SendVerificationCodeRequest()@
+Id.get6TestApplication.DTO.SendVerificationCodeRequest.Id.get@
+Id.set6TestApplication.DTO.SendVerificationCodeRequest.Id.setÒ
+&TestApplication.DTO.VerifyEmailRequestobjectS
+VerifyEmailRequest();TestApplication.DTO.VerifyEmailRequest.VerifyEmailRequest()7
+Id.get-TestApplication.DTO.VerifyEmailRequest.Id.get7
+Id.set-TestApplication.DTO.VerifyEmailRequest.Id.set;
+Code.get/TestApplication.DTO.VerifyEmailRequest.Code.get;
+Code.set/TestApplication.DTO.VerifyEmailRequest.Code.set£
+UP.DTO.ConvertRequestobject:
+ConvertRequest()&UP.DTO.ConvertRequest.ConvertRequest()>
+ShortNameStart.get(UP.DTO.ConvertRequest.ShortNameStart.get>
+ShortNameStart.set(UP.DTO.ConvertRequest.ShortNameStart.set>
+ShortNameFinal.get(UP.DTO.ConvertRequest.ShortNameFinal.get>
+ShortNameFinal.set(UP.DTO.ConvertRequest.ShortNameFinal.set2
+Quantity.get"UP.DTO.ConvertRequest.Quantity.get2
+Quantity.set"UP.DTO.ConvertRequest.Quantity.set.
+
+UserId.get UP.DTO.ConvertRequest.UserId.get.
+
+UserId.set UP.DTO.ConvertRequest.UserId.setÌ
+ Api.OpenAI.DTO.CreateUserRequestobjectK
+CreateUserRequest()4Api.OpenAI.DTO.CreateUserRequest.CreateUserRequest()1
+Id.get'Api.OpenAI.DTO.CreateUserRequest.Id.get1
+Id.set'Api.OpenAI.DTO.CreateUserRequest.Id.set=
+Nickname.get-Api.OpenAI.DTO.CreateUserRequest.Nickname.get=
+Nickname.set-Api.OpenAI.DTO.CreateUserRequest.Nickname.set=
+Password.get-Api.OpenAI.DTO.CreateUserRequest.Password.get=
+Password.set-Api.OpenAI.DTO.CreateUserRequest.Password.set?
+IPAddress.get.Api.OpenAI.DTO.CreateUserRequest.IPAddress.get?
+IPAddress.set.Api.OpenAI.DTO.CreateUserRequest.IPAddress.setG
+ApplicationId.get2Api.OpenAI.DTO.CreateUserRequest.ApplicationId.getG
+ApplicationId.set2Api.OpenAI.DTO.CreateUserRequest.ApplicationId.set∑
+UP.DTO.EditUserEmailRequestobjectL
+EditUserEmailRequest()2UP.DTO.EditUserEmailRequest.EditUserEmailRequest(),
+Id.get"UP.DTO.EditUserEmailRequest.Id.get,
+Id.set"UP.DTO.EditUserEmailRequest.Id.set2
+	Email.get%UP.DTO.EditUserEmailRequest.Email.get2
+	Email.set%UP.DTO.EditUserEmailRequest.Email.set∑
+UP.DTO.EditUserLoginRequestobjectL
+EditUserLoginRequest()2UP.DTO.EditUserLoginRequest.EditUserLoginRequest(),
+Id.get"UP.DTO.EditUserLoginRequest.Id.get,
+Id.set"UP.DTO.EditUserLoginRequest.Id.set2
+	Login.get%UP.DTO.EditUserLoginRequest.Login.get2
+	Login.set%UP.DTO.EditUserLoginRequest.Login.setè	
+UP.ModelsEF.ConversionEntities.BaseModelobject3
+Conversion()#UP.ModelsEF.Conversion.Conversion()'
+Id.getUP.ModelsEF.Conversion.Id.get'
+Id.setUP.ModelsEF.Conversion.Id.set7
+Commission.get%UP.ModelsEF.Conversion.Commission.get7
+Commission.set%UP.ModelsEF.Conversion.Commission.setE
+BeginCoinQuantity.get,UP.ModelsEF.Conversion.BeginCoinQuantity.getE
+BeginCoinQuantity.set,UP.ModelsEF.Conversion.BeginCoinQuantity.setA
+EndCoinQuantity.get*UP.ModelsEF.Conversion.EndCoinQuantity.getA
+EndCoinQuantity.set*UP.ModelsEF.Conversion.EndCoinQuantity.set9
+QuantityUSD.get&UP.ModelsEF.Conversion.QuantityUSD.get9
+QuantityUSD.set&UP.ModelsEF.Conversion.QuantityUSD.setG
+BeginCoinShortname.get-UP.ModelsEF.Conversion.BeginCoinShortname.getG
+BeginCoinShortname.set-UP.ModelsEF.Conversion.BeginCoinShortname.setC
+EndCoinShortname.get+UP.ModelsEF.Conversion.EndCoinShortname.getC
+EndCoinShortname.set+UP.ModelsEF.Conversion.EndCoinShortname.set/
+
+UserId.get!UP.ModelsEF.Conversion.UserId.get/
+
+UserId.set!UP.ModelsEF.Conversion.UserId.set+
+User.getUP.ModelsEF.Conversion.User.get+
+User.setUP.ModelsEF.Conversion.User.setÌ
+UP.DTO.EditUserPasswordRequestobjectU
+EditUserPasswordRequest()8UP.DTO.EditUserPasswordRequest.EditUserPasswordRequest()/
+Id.get%UP.DTO.EditUserPasswordRequest.Id.get/
+Id.set%UP.DTO.EditUserPasswordRequest.Id.set;
+Password.get+UP.DTO.EditUserPasswordRequest.Password.get;
+Password.set+UP.DTO.EditUserPasswordRequest.Password.setG
+PasswordRepeat.get1UP.DTO.EditUserPasswordRequest.PasswordRepeat.getG
+PasswordRepeat.set1UP.DTO.EditUserPasswordRequest.PasswordRepeat.setº
+Api.OpenAI.Handlers.HashHelpersobject+Api.OpenAI.Handlers.Interfaces.IHashHelpersF
+GenerateSalt(int)1Api.OpenAI.Handlers.HashHelpers.GenerateSalt(int)\
+HashPassword(string, string)<Api.OpenAI.Handlers.HashHelpers.HashPassword(string, string)>
+HashHelpers()-Api.OpenAI.Handlers.HashHelpers.HashHelpers()§
+%UP.Migrations.Services.ServiceServiceobject1UP.Migrations.Services.Interfaces.IServiceServicez
+(ServiceService(Repository.IDbRepository)NUP.Migrations.Services.ServiceService.ServiceService(Repository.IDbRepository)D
+GetServices()3UP.Migrations.Services.ServiceService.GetServices()-
++Api.OpenAI.Handlers.Interfaces.IHashHelpers+
+)Api.OpenAI.Handlers.Interfaces.IJWTHelpera
+Api.OpenAI.Handlers.JWTHelperobject8
+JWTHelper())Api.OpenAI.Handlers.JWTHelper.JWTHelper()†
+UP.DTO.EditUserRequestobjectÉ
+4EditUserRequest(int, string, string, string, string)KUP.DTO.EditUserRequest.EditUserRequest(int, string, string, string, string)'
+Id.getUP.DTO.EditUserRequest.Id.get'
+Id.setUP.DTO.EditUserRequest.Id.set-
+	Login.get UP.DTO.EditUserRequest.Login.get-
+	Login.set UP.DTO.EditUserRequest.Login.set3
+Password.get#UP.DTO.EditUserRequest.Password.get3
+Password.set#UP.DTO.EditUserRequest.Password.set?
+PasswordRepeat.get)UP.DTO.EditUserRequest.PasswordRepeat.get?
+PasswordRepeat.set)UP.DTO.EditUserRequest.PasswordRepeat.set-
+	Email.get UP.DTO.EditUserRequest.Email.get-
+	Email.set UP.DTO.EditUserRequest.Email.setÅ
+UP.Models.CoinListInfoEntities.BaseModelobject7
+CoinListInfo()%UP.Models.CoinListInfo.CoinListInfo()'
+Id.getUP.Models.CoinListInfo.Id.get'
+Id.setUP.Models.CoinListInfo.Id.set5
+ShortName.get$UP.Models.CoinListInfo.ShortName.get5
+ShortName.set$UP.Models.CoinListInfo.ShortName.set3
+FullName.get#UP.Models.CoinListInfo.FullName.get3
+FullName.set#UP.Models.CoinListInfo.FullName.set3
+IsActive.get#UP.Models.CoinListInfo.IsActive.get3
+IsActive.set#UP.Models.CoinListInfo.IsActive.setì
+UP.DTO.GetCoinRatioobject4
+GetCoinRatio()"UP.DTO.GetCoinRatio.GetCoinRatio():
+CoinShortName.get%UP.DTO.GetCoinRatio.CoinShortName.get:
+CoinShortName.set%UP.DTO.GetCoinRatio.CoinShortName.set2
+StartDate.get!UP.DTO.GetCoinRatio.StartDate.get2
+StartDate.set!UP.DTO.GetCoinRatio.StartDate.set.
+EndDate.getUP.DTO.GetCoinRatio.EndDate.get.
+EndDate.setUP.DTO.GetCoinRatio.EndDate.setß
+&UP.ModelsEF.EmailVerificationCodeModelEntities.BaseModelobjectc
+EmailVerificationCodeModel()CUP.ModelsEF.EmailVerificationCodeModel.EmailVerificationCodeModel()7
+Id.get-UP.ModelsEF.EmailVerificationCodeModel.Id.get7
+Id.set-UP.ModelsEF.EmailVerificationCodeModel.Id.set;
+Code.get/UP.ModelsEF.EmailVerificationCodeModel.Code.get;
+Code.set/UP.ModelsEF.EmailVerificationCodeModel.Code.set=
+	Email.get0UP.ModelsEF.EmailVerificationCodeModel.Email.get=
+	Email.set0UP.ModelsEF.EmailVerificationCodeModel.Email.setG
+IsApproved.get5UP.ModelsEF.EmailVerificationCodeModel.IsApproved.getG
+IsApproved.set5UP.ModelsEF.EmailVerificationCodeModel.IsApproved.set?
+
+UserId.get1UP.ModelsEF.EmailVerificationCodeModel.UserId.get?
+
+UserId.set1UP.ModelsEF.EmailVerificationCodeModel.UserId.setæ
+(UP.DTO.GetQuantityAfterConversionRequestobject©
+>GetQuantityAfterConversionRequest(string, string, double, int)gUP.DTO.GetQuantityAfterConversionRequest.GetQuantityAfterConversionRequest(string, string, double, int)Q
+ShortNameStart.get;UP.DTO.GetQuantityAfterConversionRequest.ShortNameStart.getQ
+ShortNameStart.set;UP.DTO.GetQuantityAfterConversionRequest.ShortNameStart.setQ
+ShortNameFinal.get;UP.DTO.GetQuantityAfterConversionRequest.ShortNameFinal.getQ
+ShortNameFinal.set;UP.DTO.GetQuantityAfterConversionRequest.ShortNameFinal.setE
+Quantity.get5UP.DTO.GetQuantityAfterConversionRequest.Quantity.getE
+Quantity.set5UP.DTO.GetQuantityAfterConversionRequest.Quantity.setA
+
+UserId.get3UP.DTO.GetQuantityAfterConversionRequest.UserId.getA
+
+UserId.set3UP.DTO.GetQuantityAfterConversionRequest.UserId.set∑
++ProjectX.Exceptions.EntityNotFoundExceptionSystem.Exceptionobjectn
+EntityNotFoundException(string)KProjectX.Exceptions.EntityNotFoundException.EntityNotFoundException(string)Ω
+UP.DTO.GetTokenRequestobject=
+GetTokenRequest()(UP.DTO.GetTokenRequest.GetTokenRequest()-
+	Email.get UP.DTO.GetTokenRequest.Email.get-
+	Email.set UP.DTO.GetTokenRequest.Email.setá
+UP.DTO.RegisterRequestobject=
+RegisterRequest()(UP.DTO.RegisterRequest.RegisterRequest()-
+	Login.get UP.DTO.RegisterRequest.Login.get-
+	Login.set UP.DTO.RegisterRequest.Login.set3
+Password.get#UP.DTO.RegisterRequest.Password.get3
+Password.set#UP.DTO.RegisterRequest.Password.set-
+	Email.get UP.DTO.RegisterRequest.Email.get-
+	Email.set UP.DTO.RegisterRequest.Email.set?
+PasswordRepeat.get)UP.DTO.RegisterRequest.PasswordRepeat.get?
+PasswordRepeat.set)UP.DTO.RegisterRequest.PasswordRepeat.set¸
+UP.Models.Base.CoinsInformationobjectﬁ
+]CoinsInformation(System.Guid, string, string, string, double, double, double, double, double)}UP.Models.Base.CoinsInformation.CoinsInformation(System.Guid, string, string, string, double, double, double, double, double)¥
+HCoinsInformation(string, string, string, double, double, double, double)hUP.Models.Base.CoinsInformation.CoinsInformation(string, string, string, double, double, double, double)H
+CoinsInformation()2UP.Models.Base.CoinsInformation.CoinsInformation()Œ
+UCoinsInformation(System.Guid, string, string, double, double, double, double, double)uUP.Models.Base.CoinsInformation.CoinsInformation(System.Guid, string, string, double, double, double, double, double)0
+Id.get&UP.Models.Base.CoinsInformation.Id.get0
+Id.set&UP.Models.Base.CoinsInformation.Id.set<
+FullName.get,UP.Models.Base.CoinsInformation.FullName.get<
+FullName.set,UP.Models.Base.CoinsInformation.FullName.set>
+ShortName.get-UP.Models.Base.CoinsInformation.ShortName.get>
+ShortName.set-UP.Models.Base.CoinsInformation.ShortName.set<
+IconPath.get,UP.Models.Base.CoinsInformation.IconPath.get<
+IconPath.set,UP.Models.Base.CoinsInformation.IconPath.setB
+DailyVolume.get/UP.Models.Base.CoinsInformation.DailyVolume.getB
+DailyVolume.set/UP.Models.Base.CoinsInformation.DailyVolume.setB
+DailyImpact.get/UP.Models.Base.CoinsInformation.DailyImpact.getB
+DailyImpact.set/UP.Models.Base.CoinsInformation.DailyImpact.set6
+	Price.get)UP.Models.Base.CoinsInformation.Price.get6
+	Price.set)UP.Models.Base.CoinsInformation.Price.setb
+PercentagePriceChangePerDay.get?UP.Models.Base.CoinsInformation.PercentagePriceChangePerDay.getb
+PercentagePriceChangePerDay.set?UP.Models.Base.CoinsInformation.PercentagePriceChangePerDay.set<
+Quantity.get,UP.Models.Base.CoinsInformation.Quantity.get<
+Quantity.set,UP.Models.Base.CoinsInformation.Quantity.setñ
+!UP.DTO.ReplenishTheBalanceRequestobjectÑ
+/ReplenishTheBalanceRequest(System.Guid, double)QUP.DTO.ReplenishTheBalanceRequest.ReplenishTheBalanceRequest(System.Guid, double)^
+ReplenishTheBalanceRequest()>UP.DTO.ReplenishTheBalanceRequest.ReplenishTheBalanceRequest():
+
+UserId.get,UP.DTO.ReplenishTheBalanceRequest.UserId.get:
+
+UserId.set,UP.DTO.ReplenishTheBalanceRequest.UserId.setD
+QuantityUsd.get1UP.DTO.ReplenishTheBalanceRequest.QuantityUsd.getD
+QuantityUsd.set1UP.DTO.ReplenishTheBalanceRequest.QuantityUsd.set≥
+*ProjectX.Exceptions.IncorrectDataExceptionSystem.Exceptionobjectk
+IncorrectDataException(string)IProjectX.Exceptions.IncorrectDataException.IncorrectDataException(string)≈
+UP.Models.CryptoCurrencyPricesEntities.BaseModelobjectO
+CryptoCurrencyPrices()5UP.Models.CryptoCurrencyPrices.CryptoCurrencyPrices()/
+Id.get%UP.Models.CryptoCurrencyPrices.Id.get/
+Id.set%UP.Models.CryptoCurrencyPrices.Id.setE
+CoinShortName.get0UP.Models.CryptoCurrencyPrices.CoinShortName.getE
+CoinShortName.set0UP.Models.CryptoCurrencyPrices.CoinShortName.set5
+	Price.get(UP.Models.CryptoCurrencyPrices.Price.get5
+	Price.set(UP.Models.CryptoCurrencyPrices.Price.set=
+Timestamp.get,UP.Models.CryptoCurrencyPrices.Timestamp.get=
+Timestamp.set,UP.Models.CryptoCurrencyPrices.Timestamp.set7
+
+CoinId.get)UP.Models.CryptoCurrencyPrices.CoinId.get7
+
+CoinId.set)UP.Models.CryptoCurrencyPrices.CoinId.set3
+Coin.get'UP.Models.CryptoCurrencyPrices.Coin.get3
+Coin.set'UP.Models.CryptoCurrencyPrices.Coin.set˚
+UP.DTO.SellCryptoRequestobjecty
+.SellCryptoRequest(System.Guid, string, double)GUP.DTO.SellCryptoRequest.SellCryptoRequest(System.Guid, string, double)1
+
+UserId.get#UP.DTO.SellCryptoRequest.UserId.get1
+
+UserId.set#UP.DTO.SellCryptoRequest.UserId.set5
+CoinName.get%UP.DTO.SellCryptoRequest.CoinName.get5
+CoinName.set%UP.DTO.SellCryptoRequest.CoinName.setC
+QuantityForSell.get,UP.DTO.SellCryptoRequest.QuantityForSell.getC
+QuantityForSell.set,UP.DTO.SellCryptoRequest.QuantityForSell.set˝
+UP.ModelsEF.LoginHistoryEntities.BaseModelobject9
+LoginHistory()'UP.ModelsEF.LoginHistory.LoginHistory())
+Id.getUP.ModelsEF.LoginHistory.Id.get)
+Id.setUP.ModelsEF.LoginHistory.Id.set7
+IPAddress.get&UP.ModelsEF.LoginHistory.IPAddress.get7
+IPAddress.set&UP.ModelsEF.LoginHistory.IPAddress.set1
+
+UserId.get#UP.ModelsEF.LoginHistory.UserId.get1
+
+UserId.set#UP.ModelsEF.LoginHistory.UserId.set-
+User.get!UP.ModelsEF.LoginHistory.User.get-
+User.set!UP.ModelsEF.LoginHistory.User.set©
+UP.Models.ServiceEntities.BaseModelobject(
+	Service()UP.Models.Service.Service()"
+Id.getUP.Models.Service.Id.get"
+Id.setUP.Models.Service.Id.set&
+Name.getUP.Models.Service.Name.get&
+Name.setUP.Models.Service.Name.set(
+	About.getUP.Models.Service.About.get(
+	About.setUP.Models.Service.About.set0
+PhotoName.getUP.Models.Service.PhotoName.get0
+PhotoName.setUP.Models.Service.PhotoName.setî
+UP.DTO.SendCryptoRequestobjectì
+;SendCryptoRequest(System.Guid, System.Guid, string, double)TUP.DTO.SendCryptoRequest.SendCryptoRequest(System.Guid, System.Guid, string, double)9
+ReceiverId.get'UP.DTO.SendCryptoRequest.ReceiverId.get9
+ReceiverId.set'UP.DTO.SendCryptoRequest.ReceiverId.set5
+SenderId.get%UP.DTO.SendCryptoRequest.SenderId.get5
+SenderId.set%UP.DTO.SendCryptoRequest.SenderId.set5
+CoinName.get%UP.DTO.SendCryptoRequest.CoinName.get5
+CoinName.set%UP.DTO.SendCryptoRequest.CoinName.setC
+QuantityForSend.get,UP.DTO.SendCryptoRequest.QuantityForSend.getC
+QuantityForSend.set,UP.DTO.SendCryptoRequest.QuantityForSend.setø
+UP.DTO.SendMessageRequestobjectF
+SendMessageRequest().UP.DTO.SendMessageRequest.SendMessageRequest()2
+
+UserId.get$UP.DTO.SendMessageRequest.UserId.get2
+
+UserId.set$UP.DTO.SendMessageRequest.UserId.set4
+Message.get%UP.DTO.SendMessageRequest.Message.get4
+Message.set%UP.DTO.SendMessageRequest.Message.set·
+UP.ModelsEF.PreviousPasswordEntities.BaseModelobjectE
+PreviousPassword()/UP.ModelsEF.PreviousPassword.PreviousPassword()-
+Id.get#UP.ModelsEF.PreviousPassword.Id.get-
+Id.set#UP.ModelsEF.PreviousPassword.Id.set5
+
+UserId.get'UP.ModelsEF.PreviousPassword.UserId.get5
+
+UserId.set'UP.ModelsEF.PreviousPassword.UserId.setU
+PreviousPasswordHashed.get7UP.ModelsEF.PreviousPassword.PreviousPasswordHashed.getU
+PreviousPasswordHashed.set7UP.ModelsEF.PreviousPassword.PreviousPasswordHashed.set1
+User.get%UP.ModelsEF.PreviousPassword.User.get1
+User.set%UP.ModelsEF.PreviousPassword.User.set◊
+UP.DTO.WithdrawRequestobject=
+WithdrawRequest()(UP.DTO.WithdrawRequest.WithdrawRequest()/
+
+UserId.get!UP.DTO.WithdrawRequest.UserId.get/
+
+UserId.set!UP.DTO.WithdrawRequest.UserId.setI
+QuantityForWithdraw.get.UP.DTO.WithdrawRequest.QuantityForWithdraw.getI
+QuantityForWithdraw.set.UP.DTO.WithdrawRequest.QuantityForWithdraw.set˝
+UP.ModelsEF.ReplenishmentEntities.BaseModelobject<
+Replenishment())UP.ModelsEF.Replenishment.Replenishment()*
+Id.get UP.ModelsEF.Replenishment.Id.get*
+Id.set UP.ModelsEF.Replenishment.Id.set6
+Quantity.get&UP.ModelsEF.Replenishment.Quantity.get6
+Quantity.set&UP.ModelsEF.Replenishment.Quantity.set:
+Commission.get(UP.ModelsEF.Replenishment.Commission.get:
+Commission.set(UP.ModelsEF.Replenishment.Commission.set2
+
+UserId.get$UP.ModelsEF.Replenishment.UserId.get2
+
+UserId.set$UP.ModelsEF.Replenishment.UserId.set.
+User.get"UP.ModelsEF.Replenishment.User.get.
+User.set"UP.ModelsEF.Replenishment.User.set†
+UP.Services.CurrencyServiceobject'UP.Services.Interfaces.ICurrencyServicer
+)CurrencyService(Repository.IDbRepository)EUP.Services.CurrencyService.CurrencyService(Repository.IDbRepository)\
+AddIfNotExists(string, double):UP.Services.CurrencyService.AddIfNotExists(string, double)—
+0ProjectX.Middlewares.ExceptionHandlingMiddlewareobjectÛ
+ûExceptionHandlingMiddleware(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.Extensions.Logging.ILogger<ProjectX.Middlewares.ExceptionHandlingMiddleware>)œProjectX.Middlewares.ExceptionHandlingMiddleware.ExceptionHandlingMiddleware(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.Extensions.Logging.ILogger<ProjectX.Middlewares.ExceptionHandlingMiddleware>)ô
+2InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)cProjectX.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)Ç
+fHandleExceptionAsync(Microsoft.AspNetCore.Http.HttpContext, string, System.Net.HttpStatusCode, string)óProjectX.Middlewares.ExceptionHandlingMiddleware.HandleExceptionAsync(Microsoft.AspNetCore.Http.HttpContext, string, System.Net.HttpStatusCode, string)q
+%Analitique.BackEnd.Handlers.IPHandlerobject@
+IPHandler()1Analitique.BackEnd.Handlers.IPHandler.IPHandler()y
+'Analitique.BackEnd.Handlers.HashHandlerobjectF
+HashHandler()5Analitique.BackEnd.Handlers.HashHandler.HashHandler()ˇ
+$UP.ModelsEF.RestorePasswordCodeModelEntities.BaseModelobject]
+RestorePasswordCodeModel()?UP.ModelsEF.RestorePasswordCodeModel.RestorePasswordCodeModel()5
+Id.get+UP.ModelsEF.RestorePasswordCodeModel.Id.get5
+Id.set+UP.ModelsEF.RestorePasswordCodeModel.Id.set9
+Code.get-UP.ModelsEF.RestorePasswordCodeModel.Code.get9
+Code.set-UP.ModelsEF.RestorePasswordCodeModel.Code.set;
+	Email.get.UP.ModelsEF.RestorePasswordCodeModel.Email.get;
+	Email.set.UP.ModelsEF.RestorePasswordCodeModel.Email.set%
+#UP.Services.Interfaces.IAuthService)
+'UP.Services.Interfaces.ICurrencyService£
+UP.Services.AuthServiceobject#UP.Services.Interfaces.IAuthServiceÃ
+XAuthService(Microsoft.Extensions.Configuration.IConfiguration, Repository.IDbRepository)pUP.Services.AuthService.AuthService(Microsoft.Extensions.Configuration.IConfiguration, Repository.IDbRepository)^
+!GetTokenAsync(UP.DTO.AuthRequest)9UP.Services.AuthService.GetTokenAsync(UP.DTO.AuthRequest)d
+$GenerateTokenAsync(UP.ModelsEF.User)<UP.Services.AuthService.GenerateTokenAsync(UP.ModelsEF.User)F
+GetTokenAsync(string)-UP.Services.AuthService.GetTokenAsync(string)≤
+&UP.Controllers.AuthorizationController'Microsoft.AspNetCore.Mvc.ControllerBaseobjectË
+^AuthorizationController(Repository.IDbRepository, Api.OpenAI.Handlers.Interfaces.IHashHelpers)ÖUP.Controllers.AuthorizationController.AuthorizationController(Repository.IDbRepository, Api.OpenAI.Handlers.Interfaces.IHashHelpers)q
+#Login(UP.DTO.AuthenticationRequest)JUP.Controllers.AuthorizationController.Login(UP.DTO.AuthenticationRequest)y
+'RegisterNewUser(UP.DTO.RegisterRequest)NUP.Controllers.AuthorizationController.RegisterNewUser(UP.DTO.RegisterRequest)è
+"UP.Repositories.CurrencyRepositoryUP.Repositories.RepositoryBaseobjectRepository.ICurrencyRepository√
+NCurrencyRepository(TestApplication.Data.DataContext, Repository.IDbRepository)qUP.Repositories.CurrencyRepository.CurrencyRepository(TestApplication.Data.DataContext, Repository.IDbRepository)s
+&BuyCrypto(System.Guid, string, double)IUP.Repositories.CurrencyRepository.BuyCrypto(System.Guid, string, double)Y
+GetUserCoins(System.Guid)<UP.Repositories.CurrencyRepository.GetUserCoins(System.Guid)ã
+2AddCryptoToUserWallet(System.Guid, string, double)UUP.Repositories.CurrencyRepository.AddCryptoToUserWallet(System.Guid, string, double)è
+4SendCrypto(System.Guid, System.Guid, string, double)WUP.Repositories.CurrencyRepository.SendCrypto(System.Guid, System.Guid, string, double)…
+QIsCoinAlreadyPurchased(System.Collections.Generic.List<UP.ModelsEF.Coin>, string)tUP.Repositories.CurrencyRepository.IsCoinAlreadyPurchased(System.Collections.Generic.List<UP.ModelsEF.Coin>, string)u
+'SellCrypto(System.Guid, string, double)JUP.Repositories.CurrencyRepository.SellCrypto(System.Guid, string, double)â
+1SubtractCoinFromUser(System.Guid, string, double)TUP.Repositories.CurrencyRepository.SubtractCoinFromUser(System.Guid, string, double)_
+GetCoinPrice(double, string)?UP.Repositories.CurrencyRepository.GetCoinPrice(double, string)e
+GetCoinQuantity(double, string)BUP.Repositories.CurrencyRepository.GetCoinQuantity(double, string)]
+GetUserBalance(System.Guid)>UP.Repositories.CurrencyRepository.GetUserBalance(System.Guid)U
+DeleteCoin(System.Guid):UP.Repositories.CurrencyRepository.DeleteCoin(System.Guid)c
+GetFullCoinInformation(string)AUP.Repositories.CurrencyRepository.GetFullCoinInformation(string)u
+'UpdateCoinQuantity(System.Guid, double)JUP.Repositories.CurrencyRepository.UpdateCoinQuantity(System.Guid, double)Ø
+DWriteTransactionToDatabase(string, double, System.Guid, System.Guid)gUP.Repositories.CurrencyRepository.WriteTransactionToDatabase(string, double, System.Guid, System.Guid)è
+4WriteWithdrawToDatabase(double, double, System.Guid)WUP.Repositories.CurrencyRepository.WriteWithdrawToDatabase(double, double, System.Guid)É
+Entities.BaseModelobjectEntities.IEntity-
+BaseModel()Entities.BaseModel.BaseModel()5
+DateCreated.get"Entities.BaseModel.DateCreated.get5
+DateCreated.set"Entities.BaseModel.DateCreated.set5
+DateUpdated.get"Entities.BaseModel.DateUpdated.get5
+DateUpdated.set"Entities.BaseModel.DateUpdated.set#
+Id.getEntities.BaseModel.Id.get#
+Id.setEntities.BaseModel.Id.set€
+UP.ModelsEF.TransactionsEntities.BaseModelobject9
+Transactions()'UP.ModelsEF.Transactions.Transactions())
+Id.getUP.ModelsEF.Transactions.Id.get)
+Id.setUP.ModelsEF.Transactions.Id.set5
+CoinName.get%UP.ModelsEF.Transactions.CoinName.get5
+CoinName.set%UP.ModelsEF.Transactions.CoinName.set5
+Quantity.get%UP.ModelsEF.Transactions.Quantity.get5
+Quantity.set%UP.ModelsEF.Transactions.Quantity.set5
+SenderId.get%UP.ModelsEF.Transactions.SenderId.get5
+SenderId.set%UP.ModelsEF.Transactions.SenderId.set9
+ReceiverId.get'UP.ModelsEF.Transactions.ReceiverId.get9
+ReceiverId.set'UP.ModelsEF.Transactions.ReceiverId.set1
+
+Sender.get#UP.ModelsEF.Transactions.Sender.get1
+
+Sender.set#UP.ModelsEF.Transactions.Sender.set5
+Receiver.get%UP.ModelsEF.Transactions.Receiver.get5
+Receiver.set%UP.ModelsEF.Transactions.Receiver.set
+Entities.IEntity&
+$UP.Services.Interfaces.IEmailService≈
+BlockingEntities.BaseModelobject!
+
+Blocking()Blocking.Blocking()
+Id.getBlocking.Id.get
+Id.setBlocking.Id.set
+	Cause.getBlocking.Cause.get
+	Cause.setBlocking.Cause.set!
+
+UserId.getBlocking.UserId.get!
+
+UserId.setBlocking.UserId.set
+User.getBlocking.User.get
+User.setBlocking.User.set 
+Repository.ICurrencyRepository≥
+UP.ModelsEF.UsersCoinsEntities.BaseModelobject3
+UsersCoins()#UP.ModelsEF.UsersCoins.UsersCoins()'
+Id.getUP.ModelsEF.UsersCoins.Id.get'
+Id.setUP.ModelsEF.UsersCoins.Id.set/
+
+UserId.get!UP.ModelsEF.UsersCoins.UserId.get/
+
+UserId.set!UP.ModelsEF.UsersCoins.UserId.set/
+
+CoinId.get!UP.ModelsEF.UsersCoins.CoinId.get/
+
+CoinId.set!UP.ModelsEF.UsersCoins.CoinId.set+
+User.getUP.ModelsEF.UsersCoins.User.get+
+User.setUP.ModelsEF.UsersCoins.User.set+
+Coin.getUP.ModelsEF.UsersCoins.Coin.get+
+Coin.setUP.ModelsEF.UsersCoins.Coin.set√
+UP.Services.EmailServiceobject$UP.Services.Interfaces.IEmailServicei
+&EmailService(Repository.IDbRepository)?UP.Services.EmailService.EmailService(Repository.IDbRepository)É
+3VerifyEmail(TestApplication.DTO.VerifyEmailRequest)LUP.Services.EmailService.VerifyEmail(TestApplication.DTO.VerifyEmailRequest)_
+!DeleteEmailCodeAsync(System.Guid):UP.Services.EmailService.DeleteEmailCodeAsync(System.Guid)_
+!SendVerificationCode(System.Guid):UP.Services.EmailService.SendVerificationCode(System.Guid)y
+.SendVerificationCodeAsync(System.Guid, string)GUP.Services.EmailService.SendVerificationCodeAsync(System.Guid, string)ì
+;RestorePassword(TestApplication.DTO.RestorePasswordRequest)TUP.Services.EmailService.RestorePassword(TestApplication.DTO.RestorePasswordRequest)s
++SendMessageBlock(UP.DTO.SendMessageRequest)DUP.Services.EmailService.SendMessageBlock(UP.DTO.SendMessageRequest)ø
+QSendEmailMessageTransactionsAsync(System.Guid, string, double, bool, System.Guid)jUP.Services.EmailService.SendEmailMessageTransactionsAsync(System.Guid, string, double, bool, System.Guid)1
+Programobject
+	Program()Program.Program()”
+UP.ModelsEF.WithdrawalEntities.BaseModelobject3
+Withdrawal()#UP.ModelsEF.Withdrawal.Withdrawal()'
+Id.getUP.ModelsEF.Withdrawal.Id.get'
+Id.setUP.ModelsEF.Withdrawal.Id.set3
+Quantity.get#UP.ModelsEF.Withdrawal.Quantity.get3
+Quantity.set#UP.ModelsEF.Withdrawal.Quantity.set7
+Commission.get%UP.ModelsEF.Withdrawal.Commission.get7
+Commission.set%UP.ModelsEF.Withdrawal.Commission.set/
+
+UserId.get!UP.ModelsEF.Withdrawal.UserId.get/
+
+UserId.set!UP.ModelsEF.Withdrawal.UserId.set+
+User.getUP.ModelsEF.Withdrawal.User.get+
+User.setUP.ModelsEF.Withdrawal.User.setó
+UP.ModelsEF.UserEntities.BaseModelobject!
+User()UP.ModelsEF.User.User()!
+Id.getUP.ModelsEF.User.Id.get!
+Id.setUP.ModelsEF.User.Id.set'
+	Login.getUP.ModelsEF.User.Login.get'
+	Login.setUP.ModelsEF.User.Login.set-
+Password.getUP.ModelsEF.User.Password.get-
+Password.setUP.ModelsEF.User.Password.set'
+	Email.getUP.ModelsEF.User.Email.get'
+	Email.setUP.ModelsEF.User.Email.set/
+IsDeleted.getUP.ModelsEF.User.IsDeleted.get/
+IsDeleted.setUP.ModelsEF.User.IsDeleted.set)
+
+RoleId.getUP.ModelsEF.User.RoleId.get)
+
+RoleId.setUP.ModelsEF.User.RoleId.set/
+IsBlocked.getUP.ModelsEF.User.IsBlocked.get/
+IsBlocked.setUP.ModelsEF.User.IsBlocked.set%
+Salt.getUP.ModelsEF.User.Salt.get%
+Salt.setUP.ModelsEF.User.Salt.set/
+Blockings.getUP.ModelsEF.User.Blockings.get/
+Blockings.setUP.ModelsEF.User.Blockings.set3
+Conversions.get UP.ModelsEF.User.Conversions.get3
+Conversions.set UP.ModelsEF.User.Conversions.set1
+UsersCoins.getUP.ModelsEF.User.UsersCoins.get1
+UsersCoins.setUP.ModelsEF.User.UsersCoins.set9
+LoginHistories.get#UP.ModelsEF.User.LoginHistories.get9
+LoginHistories.set#UP.ModelsEF.User.LoginHistories.set?
+PreviousPasswords.get&UP.ModelsEF.User.PreviousPasswords.get?
+PreviousPasswords.set&UP.ModelsEF.User.PreviousPasswords.set9
+Replenishments.get#UP.ModelsEF.User.Replenishments.get9
+Replenishments.set#UP.ModelsEF.User.Replenishments.set=
+SentTransactions.get%UP.ModelsEF.User.SentTransactions.get=
+SentTransactions.set%UP.ModelsEF.User.SentTransactions.setE
+ReceivedTransactions.get)UP.ModelsEF.User.ReceivedTransactions.getE
+ReceivedTransactions.set)UP.ModelsEF.User.ReceivedTransactions.set3
+Withdrawals.get UP.ModelsEF.User.Withdrawals.get3
+Withdrawals.set UP.ModelsEF.User.Withdrawals.set)
+'UP.Repositories.ITransactionsRepository
+Repository.IUserRepositorym
+UP.Repositories.RepositoryBaseobjectC
+RepositoryBase()/UP.Repositories.RepositoryBase.RepositoryBase()
+Repository.IDbRepositoryÃ
+UP.Controllers.EmailController'Microsoft.AspNetCore.Mvc.ControllerBaseobjectç
+5EmailController(UP.Services.Interfaces.IEmailService)TUP.Controllers.EmailController.EmailController(UP.Services.Interfaces.IEmailService)≠
+ESendVerificationCode(TestApplication.DTO.SendVerificationCodeRequest)dUP.Controllers.EmailController.SendVerificationCode(TestApplication.DTO.SendVerificationCodeRequest)â
+3VerifyEmail(TestApplication.DTO.VerifyEmailRequest)RUP.Controllers.EmailController.VerifyEmail(TestApplication.DTO.VerifyEmailRequest)ü
+>ConfirmRestorePassword(TestApplication.DTO.VerifyEmailRequest)]UP.Controllers.EmailController.ConfirmRestorePassword(TestApplication.DTO.VerifyEmailRequest)ô
+;RestorePassword(TestApplication.DTO.RestorePasswordRequest)ZUP.Controllers.EmailController.RestorePassword(TestApplication.DTO.RestorePasswordRequest)o
+&SendMessage(UP.DTO.SendMessageRequest)EUP.Controllers.EmailController.SendMessage(UP.DTO.SendMessageRequest)Ã	
+UP.Repositories.DbRepositoryobjectRepository.IDbRepository}
+.DbRepository(TestApplication.Data.DataContext)KUP.Repositories.DbRepository.DbRepository(TestApplication.Data.DataContext)1
+Get<T>()%UP.Repositories.DbRepository.Get<T>()°
+@Get<T>(System.Linq.Expressions.Expression<System.Func<T, bool>>)]UP.Repositories.DbRepository.Get<T>(System.Linq.Expressions.Expression<System.Func<T, bool>>)3
+	Add<T>(T)&UP.Repositories.DbRepository.Add<T>(T)ç
+6AddRange<T>(System.Collections.Generic.IEnumerable<T>)SUP.Repositories.DbRepository.AddRange<T>(System.Collections.Generic.IEnumerable<T>)M
+Delete<T>(System.Guid)3UP.Repositories.DbRepository.Delete<T>(System.Guid)9
+Remove<T>(T))UP.Repositories.DbRepository.Remove<T>(T)ì
+9RemoveRange<T>(System.Collections.Generic.IEnumerable<T>)VUP.Repositories.DbRepository.RemoveRange<T>(System.Collections.Generic.IEnumerable<T>)9
+Update<T>(T))UP.Repositories.DbRepository.Update<T>(T)ì
+9UpdateRange<T>(System.Collections.Generic.IEnumerable<T>)VUP.Repositories.DbRepository.UpdateRange<T>(System.Collections.Generic.IEnumerable<T>)E
+SaveChangesAsync()/UP.Repositories.DbRepository.SaveChangesAsync()7
+GetAll<T>()(UP.Repositories.DbRepository.GetAll<T>()ü
+
+!UP.Controllers.CurrencyController'Microsoft.AspNetCore.Mvc.ControllerBaseobjectä
+±CurrencyController(Microsoft.Extensions.Logging.ILogger<UP.Controllers.CurrencyController>, Repository.IUserRepository, Repository.ICurrencyRepository, Repository.IDbRepository)”UP.Controllers.CurrencyController.CurrencyController(Microsoft.Extensions.Logging.ILogger<UP.Controllers.CurrencyController>, Repository.IUserRepository, Repository.ICurrencyRepository, Repository.IDbRepository)X
+GetUserCoins(System.Guid);UP.Controllers.CurrencyController.GetUserCoins(System.Guid)`
+GetUserCoinsFull(System.Guid)?UP.Controllers.CurrencyController.GetUserCoinsFull(System.Guid)§
+?GetQuantityAfterConversion(string, string, double, System.Guid)aUP.Controllers.CurrencyController.GetQuantityAfterConversion(string, string, double, System.Guid)\
+GetUserBalance(System.Guid)=UP.Controllers.CurrencyController.GetUserBalance(System.Guid)Ü
+0GetCoinQuantityInUserWallet(System.Guid, string)RUP.Controllers.CurrencyController.GetCoinQuantityInUserWallet(System.Guid, string)^
+GetCoinPrice(double, string)>UP.Controllers.CurrencyController.GetCoinPrice(double, string)N
+GetCoinRatio(string)6UP.Controllers.CurrencyController.GetCoinRatio(string)B
+GetCoinsList()0UP.Controllers.CurrencyController.GetCoinsList()ø	
+&UP.Repositories.TransactionsRepositoryUP.Repositories.RepositoryBaseobject'UP.Repositories.ITransactionsRepository€
+XTransactionsRepository(TestApplication.Data.DataContext, Repository.ICurrencyRepository)UP.Repositories.TransactionsRepository.TransactionsRepository(TestApplication.Data.DataContext, Repository.ICurrencyRepository)õ
+8WriteNewConversionDataToDatabase(UP.ModelsEF.Conversion)_UP.Repositories.TransactionsRepository.WriteNewConversionDataToDatabase(UP.ModelsEF.Conversion)w
+&GetUserConversionsHistory(System.Guid)MUP.Repositories.TransactionsRepository.GetUserConversionsHistory(System.Guid){
+(ReplenishTheBalance(System.Guid, double)OUP.Repositories.TransactionsRepository.ReplenishTheBalance(System.Guid, double)o
+"GetUserDepositHistory(System.Guid)IUP.Repositories.TransactionsRepository.GetUserDepositHistory(System.Guid)m
+!WithdrawUSDT(System.Guid, double)HUP.Repositories.TransactionsRepository.WithdrawUSDT(System.Guid, double)w
+&GetUserWithdrawalsHistory(System.Guid)MUP.Repositories.TransactionsRepository.GetUserWithdrawalsHistory(System.Guid)y
+'GetUserTransactionsHistory(System.Guid)NUP.Repositories.TransactionsRepository.GetUserTransactionsHistory(System.Guid)ƒ
+ UP.Controllers.ServiceController'Microsoft.AspNetCore.Mvc.ControllerBaseobject≠
+DServiceController(UP.Migrations.Services.Interfaces.IServiceService)eUP.Controllers.ServiceController.ServiceController(UP.Migrations.Services.Interfaces.IServiceService)?
+GetServices().UP.Controllers.ServiceController.GetServices()Ê
+UP.Repositories.UserRepositoryUP.Repositories.RepositoryBaseobjectRepository.IUserRepository√
+PUserRepository(TestApplication.Data.DataContext, Repository.ICurrencyRepository)oUP.Repositories.UserRepository.UserRepository(TestApplication.Data.DataContext, Repository.ICurrencyRepository)U
+GetUserCoins(System.Guid)8UP.Repositories.UserRepository.GetUserCoins(System.Guid)]
+GetUserCoinsFull(System.Guid)<UP.Repositories.UserRepository.GetUserCoinsFull(System.Guid)É
+0GetCoinQuantityInUserWallet(System.Guid, string)OUP.Repositories.UserRepository.GetCoinQuantityInUserWallet(System.Guid, string)˚
+$UP.Controllers.TransactionController'Microsoft.AspNetCore.Mvc.ControllerBaseobject∑
+ÜTransactionController(Repository.IDbRepository, Microsoft.Extensions.Logging.ILogger<UP.Controllers.TransactionController>, Repository.IUserRepository, Repository.ICurrencyRepository, UP.Repositories.ITransactionsRepository, UP.Services.Interfaces.IEmailService)´UP.Controllers.TransactionController.TransactionController(Repository.IDbRepository, Microsoft.Extensions.Logging.ILogger<UP.Controllers.TransactionController>, Repository.IUserRepository, Repository.ICurrencyRepository, UP.Repositories.ITransactionsRepository, UP.Services.Interfaces.IEmailService)g
+GetCoinQuantity(string, double)DUP.Controllers.TransactionController.GetCoinQuantity(string, double)Y
+GetUserList(System.Guid)=UP.Controllers.TransactionController.GetUserList(System.Guid)m
+"GetUserDepositHistory(System.Guid)GUP.Controllers.TransactionController.GetUserDepositHistory(System.Guid)e
+Convert(UP.DTO.ConvertRequest)CUP.Controllers.TransactionController.Convert(UP.DTO.ConvertRequest)m
+"BuyCrypto(UP.DTO.BuyCryptoRequest)GUP.Controllers.TransactionController.BuyCrypto(UP.DTO.BuyCryptoRequest)q
+$SellCrypto(UP.DTO.SellCryptoRequest)IUP.Controllers.TransactionController.SellCrypto(UP.DTO.SellCryptoRequest)q
+$SendCrypto(UP.DTO.SendCryptoRequest)IUP.Controllers.TransactionController.SendCrypto(UP.DTO.SendCryptoRequest)ï
+6ReplenishTheBalance(UP.DTO.ReplenishTheBalanceRequest)[UP.Controllers.TransactionController.ReplenishTheBalance(UP.DTO.ReplenishTheBalanceRequest)q
+$WithdrawUSDT(UP.DTO.WithdrawRequest)IUP.Controllers.TransactionController.WithdrawUSDT(UP.DTO.WithdrawRequest)u
+&GetUserWithdrawalsHistory(System.Guid)KUP.Controllers.TransactionController.GetUserWithdrawalsHistory(System.Guid)w
+'GetUserTransactionsHistory(System.Guid)LUP.Controllers.TransactionController.GetUserTransactionsHistory(System.Guid)∆
+UP.Controllers.UserController'Microsoft.AspNetCore.Mvc.ControllerBaseobjectÃ
+UUserController(Repository.IDbRepository, Api.OpenAI.Handlers.Interfaces.IHashHelpers)sUP.Controllers.UserController.UserController(Repository.IDbRepository, Api.OpenAI.Handlers.Interfaces.IHashHelpers)v
+*EditUserLogin(UP.DTO.EditUserLoginRequest)HUP.Controllers.UserController.EditUserLogin(UP.DTO.EditUserLoginRequest)l
+%IsNicknameUnique(string, System.Guid)CUP.Controllers.UserController.IsNicknameUnique(string, System.Guid)r
+(EditUser(UP.DTO.EditUserPasswordRequest)FUP.Controllers.UserController.EditUser(UP.DTO.EditUserPasswordRequest)v
+*EditUserEmail(UP.DTO.EditUserEmailRequest)HUP.Controllers.UserController.EditUserEmail(UP.DTO.EditUserEmailRequest)b
+ EditUser(UP.DTO.EditUserRequest)>UP.Controllers.UserController.EditUser(UP.DTO.EditUserRequest)b
+ GetUserLoginHistory(System.Guid)>UP.Controllers.UserController.GetUserLoginHistory(System.Guid)\
+GetUserLoginById(System.Guid);UP.Controllers.UserController.GetUserLoginById(System.Guid)V
+DeleteAccount(System.Guid)8UP.Controllers.UserController.DeleteAccount(System.Guid)h
+#ChangeUserName(System.Guid, string)AUP.Controllers.UserController.ChangeUserName(System.Guid, string)z
+,ChangePassword(UP.DTO.ChangePasswordRequest)JUP.Controllers.UserController.ChangePassword(UP.DTO.ChangePasswordRequest)Ñ
+1CreateUserAsync(Api.OpenAI.DTO.CreateUserRequest)OUP.Controllers.UserController.CreateUserAsync(Api.OpenAI.DTO.CreateUserRequest)R
+IsNicknameUnique(string)6UP.Controllers.UserController.IsNicknameUnique(string)p
+'IsEmailUniqueAsync(string, System.Guid)EUP.Controllers.UserController.IsEmailUniqueAsync(string, System.Guid)V
+IsLoginUniqueAsync(string)8UP.Controllers.UserController.IsLoginUniqueAsync(string)J
+IsEmailValid(string)2UP.Controllers.UserController.IsEmailValid(string)

@@ -1,0 +1,1 @@
+CR-C:\work\BSUIR\crypto-wallet\Backend\UP.csproj¢net8.0òCSharp12
