@@ -5,11 +5,11 @@
 
 ## Архитектура в нотации C4
 
-![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/schemes/DB.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/staff/%D0%A14_1.jpg)
 ### Рисунок 1.1 – Второй уровень С4-модели
 
 
-![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/schemes/DB.jpg)
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/staff/%D0%A14_2.jpg)
 ### Рисунок 1.2 – Компонентный уровень модели С4
 
 ## UML-диаграммы
