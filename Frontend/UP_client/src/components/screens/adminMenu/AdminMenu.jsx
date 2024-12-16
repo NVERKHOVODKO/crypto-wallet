@@ -304,8 +304,6 @@ function AdminMenu({ id }) {
                     </div>
                 </div>
             )}
-
-
         </div>
     );
 }

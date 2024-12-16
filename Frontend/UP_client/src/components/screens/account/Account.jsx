@@ -199,10 +199,10 @@ function AccontMenu(props) {
                                     onClick={() => handleButtonClick('editUserMyself')}>Редактирование
                             </button>
                             <button className="btnAccountMenuCase"
-                                    onClick={() => handleButtonClick('loginHistory')}>История
+                                    onClick={() => handleButtonClick('loginHistory')}>История входов
                             </button>
                             <button className="btnAccountMenuCase"
-                                    onClick={() => handleButtonClick('withdrawMoney')}>Вывод
+                                    onClick={() => handleButtonClick('withdrawMoney')}>Вывести
                             </button>
                             <button className="btnAccountMenuCase"
                                     onClick={() => handleButtonClick('replenishBalance')}>Пополнить

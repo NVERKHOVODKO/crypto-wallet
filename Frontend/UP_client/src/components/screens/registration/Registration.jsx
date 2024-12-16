@@ -18,32 +18,39 @@ function AuthorizationPage() {
 
   const handleCreateNew = (event) => {
     event.preventDefault();
-    console.log("Login: " + login + "\nPassword: " + password + "\nPasswordRep: " + passwordRepeat);
+    console.log("Login1: " + login + "\nPassword: " + password + "\nPasswordRep: " + passwordRepeat);
+    console.log(0)
 
     if (login.length < 1) {
       setText("Введите login");
       return;
     }
+    console.log(1)
 
     if (password.length < 1) {
       setText("Введите пароль");
       return;
     }
+    console.log(2)
 
     if (passwordRepeat.length < 1) {
       setText("Повторите пароль");
       return;
     }
+    console.log(3)
 
     if (passwordRepeat != password) {
       setText("Пароли не совпадают");
       return;
     }
+    console.log(4)
 
     if (email.length < 1|| !isEmailValid(email)) {
       setText("Введите корректный email");
       return;
     }
+    console.log(5)
+
     try {
       axios.post('https://localhost:7157/Authorization/register', { login, password, passwordRepeat, email })
           .then(response => {

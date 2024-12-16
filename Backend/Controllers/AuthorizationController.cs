@@ -16,16 +16,22 @@ public class AuthorizationController : ControllerBase
 {
     private readonly IDbRepository _dbRepository;
     private readonly IHashHelpers _hashHelpers;
-    private readonly ILogger<AuthorizationController> _logger;
 
-    public AuthorizationController(ILogger<AuthorizationController> logger, IDbRepository dbRepository,
+    public AuthorizationController(
+        IDbRepository dbRepository,
         IHashHelpers hashHelpers)
     {
-        _logger = logger;
         _dbRepository = dbRepository;
         _hashHelpers = hashHelpers;
     }
 
+    /// <summary>
+    /// Аутентификация пользователя.
+    /// </summary>
+    /// <param name="request">Данные для авторизации.</param>
+    /// <returns>Информация о пользователе.</returns>
+    /// <response code="200">Возвращает информацию о пользователе.</response>
+    /// <response code="404">Пользователь не найден или аккаунт заблокирован.</response>
     [HttpPost]
     [Route("login")]
     public async Task<IActionResult> Login([FromBody] AuthenticationRequest request)
@@ -54,6 +60,13 @@ public class AuthorizationController : ControllerBase
         return Ok(user);
     }
 
+    /// <summary>
+    /// Регистрация нового пользователя.
+    /// </summary>
+    /// <param name="request">Данные для регистрации.</param>
+    /// <returns>Сообщение о результатах регистрации.</returns>
+    /// <response code="200">Успешная регистрация.</response>
+    /// <response code="400">Ошибки валидации данных.</response>
     [HttpPost]
     [Route("register")]
     public async Task<IActionResult> RegisterNewUser([FromBody] RegisterRequest request)

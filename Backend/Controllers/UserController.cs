@@ -38,6 +38,12 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
 
     }
 
+    /// <summary>
+    /// Check if a nickname is unique for the user.
+    /// </summary>
+    /// <param name="nickname">The nickname to check.</param>
+    /// <param name="currentUserId">The ID of the current user.</param>
+    /// <returns>True if the nickname is unique, false otherwise.</returns>
     [HttpPost]
     [Route("IsNicknameUnique1")]
     private async Task<bool> IsNicknameUnique(string nickname, Guid currentUserId)
@@ -46,6 +52,11 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
                null;
     }
 
+    /// <summary>
+    /// Edit the user's password.
+    /// </summary>
+    /// <param name="request">Request containing the user ID and new password.</param>
+    /// <returns>Status of the operation.</returns>
     [HttpPut]
     [Route("editUserPassword")]
     public async Task<ActionResult> EditUser([FromBody] EditUserPasswordRequest request)
@@ -66,6 +77,11 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
         return Ok("Пароль изменен успешно");
     }
 
+    /// <summary>
+    /// Edit the user's email.
+    /// </summary>
+    /// <param name="request">Request containing the user ID and new email.</param>
+    /// <returns>Status of the operation.</returns>
     [HttpPut]
     [Route("editUserEmail")]
     public async Task<ActionResult> EditUserEmail([FromBody] EditUserEmailRequest request)
@@ -95,6 +111,11 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
 
     }
 
+    /// <summary>
+    /// Edit the user's general information (not implemented).
+    /// </summary>
+    /// <param name="request">Request containing the user ID and new user data.</param>
+    /// <returns>Status of the operation.</returns>
     [HttpPut]
     [Route("editUser")]
     public Task<ActionResult> EditUser([FromBody] EditUserRequest request)
@@ -102,17 +123,11 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
         return Task.FromResult<ActionResult>(Ok("none"));
     }
 
-    [HttpGet]
-    [Route("getUserPreviousPasswordsList")]
-    public Task<ActionResult> GetUserPreviousPasswordsList(int id)
-    {
-        /*var loginHistory = await _dbRepository.Get<LoginHistory>().FirstOrDefaultAsync(x => x.UserId == id);
-       if (loginHistory == null || loginHistory)
-           throw new EntityNotFoundException("loginHistory not found");
-       return Ok(loginHistory);*/
-        return Task.FromResult<ActionResult>(Ok("none"));
-    }
-
+    /// <summary>
+    /// Get the login history of a user.
+    /// </summary>
+    /// <param name="id">User ID.</param>
+    /// <returns>List of login history for the user.</returns>
     [HttpGet]
     [Route("getUserLoginHistory/{id}")]
     public async Task<IActionResult> GetUserLoginHistory(Guid id)
@@ -123,6 +138,11 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
         return Ok(loginHistory);
     }
 
+    /// <summary>
+    /// Get the current login of a user by their ID.
+    /// </summary>
+    /// <param name="id">User ID.</param>
+    /// <returns>The current login (nickname) of the user.</returns>
     [HttpGet]
     [Route("getUserLoginById")]
     public async Task<IActionResult> GetUserLoginById(Guid id)
@@ -133,6 +153,11 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
         return Ok(existingUser.Login);
     }
 
+    /// <summary>
+    /// Delete a user's account.
+    /// </summary>
+    /// <param name="id">User ID.</param>
+    /// <returns>Status of the operation.</returns>
     [HttpDelete]
     [Route("deleteAccount")]
     public async Task<ActionResult> DeleteAccount(Guid id)
@@ -148,6 +173,12 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
         return Ok("Пользователь удален");
     }
 
+    /// <summary>
+    /// Change the login (nickname) of a user.
+    /// </summary>
+    /// <param name="id">User ID.</param>
+    /// <param name="newLogin">New login (nickname) for the user.</param>
+    /// <returns>Status of the operation.</returns>
     [HttpPut]
     [Route("changeLogin")]
     public async Task<ActionResult> ChangeUserName(Guid id, string newLogin)
@@ -172,6 +203,11 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
         return Ok("Пароль успешно изменен");
     }
 
+    /// <summary>
+    /// Change the password of a user.
+    /// </summary>
+    /// <param name="request">Request containing the user ID and new password.</param>
+    /// <returns>Status of the operation.</returns>
     [HttpPut]
     [Route("changePassword")]
     public async Task<ActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
@@ -198,6 +234,11 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
         return Ok("Пароль успешно изменен");
     }
 
+    /// <summary>
+    /// Create a new user account.
+    /// </summary>
+    /// <param name="request">Request containing the user data to create a new account.</param>
+    /// <returns>Creation status of the user account.</returns>
     [HttpPost]
     [Route("CreateUserAsync")]
     public async Task CreateUserAsync(CreateUserRequest request)
@@ -236,10 +277,21 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
         await dbRepository.SaveChangesAsync();
     }
 
+    /// <summary>
+    /// Check if a nickname is unique in the system.
+    /// </summary>
+    /// <param name="nickname">The nickname to check.</param>
+    /// <returns>True if the nickname is unique, false otherwise.</returns>
     [HttpPost]
     [Route("IsNicknameUnique")]
     private async Task<bool> IsNicknameUnique(string nickname) => await dbRepository.Get<User>(x => x.Login == nickname).FirstOrDefaultAsync() == null;
 
+    /// <summary>
+    /// Check if an email is unique in the system.
+    /// </summary>
+    /// <param name="email">The email to check.</param>
+    /// <param name="id">The user ID to exclude from the check.</param>
+    /// <returns>True if the email is unique, false otherwise.</returns>
     [HttpPost]
     [Route("IsEmailUniqueAsync")]
     public async Task<bool> IsEmailUniqueAsync(string email, Guid id)
@@ -251,6 +303,11 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
         return users.Count == 0;
     }
 
+    /// <summary>
+    /// Check if a login is unique in the system.
+    /// </summary>
+    /// <param name="login">The login to check.</param>
+    /// <returns>True if the login is unique, false otherwise.</returns>
     [HttpPost]
     [Route("IsLoginUniqueAsync")]
     public async Task<bool> IsLoginUniqueAsync(string login)
@@ -262,6 +319,11 @@ public class UserController(IDbRepository dbRepository, IHashHelpers hashHelpers
         return userWithSameEmail.Count == 0;
     }
 
+    /// <summary>
+    /// Validate if an email is in a proper format.
+    /// </summary>
+    /// <param name="email">The email to validate.</param>
+    /// <returns>True if the email is valid, false otherwise.</returns>
     [HttpPost]
     [Route("IsEmailValid")]
     public bool IsEmailValid(string email) => Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.(com|net|org|gov)$", RegexOptions.IgnoreCase);

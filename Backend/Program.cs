@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
 using Api.OpenAI.Handlers;
@@ -27,7 +28,7 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = @"Please insert token",
+        Description = "Please insert token",
         Name = "Authorization",
         In = ParameterLocation.Header,
         //Type = SecuritySchemeType.ApiKey,
@@ -56,6 +57,11 @@ builder.Services.AddSwaggerGen(options =>
         Version = "v1",
         Title = "UP API"
     });
+    
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    options.IncludeXmlComments(xmlPath);
+    options.EnableAnnotations();
 });
 
 builder.Services.AddScoped<IDbRepository, DbRepository>();

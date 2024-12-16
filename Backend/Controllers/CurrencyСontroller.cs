@@ -9,6 +9,9 @@ using UP.Services.Interfaces;
 
 namespace UP.Controllers;
 
+/// <summary>
+/// Контроллер для управления валютами, балансами пользователей и получения информации о криптовалютах.
+/// </summary>
 [ApiController]
 [Route("[controller]")]
 public class CurrencyController : ControllerBase
@@ -27,6 +30,11 @@ public class CurrencyController : ControllerBase
         _dbRepository = dbRepository;
     }
 
+    /// <summary>
+    /// Возвращает список монет пользователя.
+    /// </summary>
+    /// <param name="userId">Идентификатор пользователя</param>
+    /// <returns>Список монет пользователя</returns>
     [HttpGet]
     [Route("getUserCoins")]
     public Task<ActionResult> GetUserCoins(Guid userId)
@@ -35,14 +43,26 @@ public class CurrencyController : ControllerBase
         return Task.FromResult<ActionResult>(Ok(_userRepository.GetUserCoins(userId)));
     }
 
+    /// <summary>
+    /// Возвращает полную информацию о монетах пользователя.
+    /// </summary>
+    /// <param name="userId">Идентификатор пользователя</param>
+    /// <returns>Полная информация о монетах пользователя</returns>
     [HttpGet]
     [Route("getUserCoinsFull")]
     public async Task<IActionResult> GetUserCoinsFull(Guid userId)
     {
         return Ok(await _userRepository.GetUserCoinsFull(userId));
     }
-
-
+    
+    /// <summary>
+    /// Конвертирует количество одной валюты в другую.
+    /// </summary>
+    /// <param name="shortNameStart">Краткое имя исходной валюты</param>
+    /// <param name="shortNameFinal">Краткое имя целевой валюты</param>
+    /// <param name="quantity">Количество исходной валюты</param>
+    /// <param name="userId">Идентификатор пользователя</param>
+    /// <returns>Конвертированное количество целевой валюты</returns>
     [HttpGet]
     [Route("getQuantityAfterConversion")]
     public async Task<IActionResult> GetQuantityAfterConversion(string shortNameStart, string shortNameFinal,
@@ -71,7 +91,11 @@ public class CurrencyController : ControllerBase
         }
     }
 
-
+    /// <summary>
+    /// Возвращает баланс пользователя.
+    /// </summary>
+    /// <param name="userId">Идентификатор пользователя</param>
+    /// <returns>Баланс пользователя</returns>
     [HttpGet]
     [Route("getUserBalance")]
     public async Task<ActionResult> GetUserBalance(Guid userId)
@@ -86,7 +110,13 @@ public class CurrencyController : ControllerBase
             return BadRequest("Не удалось вернуть баланс пользователя");
         }
     }
-
+    
+    /// <summary>
+    /// Возвращает количество монет определенного типа в кошельке пользователя.
+    /// </summary>
+    /// <param name="userId">Идентификатор пользователя</param>
+    /// <param name="coinName">Название монеты</param>
+    /// <returns>Количество монет</returns>
     [HttpGet]
     [Route("getCoinQuantityInUserWallet")]
     public Task<ActionResult> GetCoinQuantityInUserWallet(Guid userId, string coinName)
@@ -102,6 +132,12 @@ public class CurrencyController : ControllerBase
         }
     }
     
+    /// <summary>
+    /// Возвращает текущую цену монеты.
+    /// </summary>
+    /// <param name="quantity">Количество монет</param>
+    /// <param name="coinName">Название монеты</param>
+    /// <returns>Текущая цена монеты</returns>
     [HttpGet]
     [Route("getCoinPrice")]
     public async Task<ActionResult> GetCoinPrice(double quantity, string coinName)
@@ -117,6 +153,11 @@ public class CurrencyController : ControllerBase
         }
     }
     
+    /// <summary>
+    /// Возвращает историю цен монеты по краткому названию.
+    /// </summary>
+    /// <param name="shortName">Краткое имя монеты</param>
+    /// <returns>Анализ изменений цен</returns>
     [HttpGet]
     [Route("get-coin-price-history/{shortName}")]
     public async Task<ActionResult> GetCoinRatio(string shortName)
@@ -168,6 +209,10 @@ public class CurrencyController : ControllerBase
         return result;
     }
 
+    /// <summary>
+    /// Возвращает активный список криптовалют.
+    /// </summary>
+    /// <returns>Список активных криптовалют с их информацией</returns>
     [HttpGet]
     [Route("getCurrenciesList")]
     public async Task<ActionResult> GetCoinsList()
@@ -217,7 +262,7 @@ public class CurrencyController : ControllerBase
                 Timestamp = currentTime,
                 CoinId = coin.Id
             };
-            var result = await _dbRepository.Add(newPrice);
+            await _dbRepository.Add(newPrice);
         }
         await _dbRepository.SaveChangesAsync();
         return Ok(coins);

@@ -124,7 +124,7 @@ public class EmailService : IEmailService
 
         mm.IsBodyHtml = true;
         sc.Port = 587;
-        sc.Credentials = new NetworkCredential("mikita.verkhavodka@gmail.com", "lmqa tylg iawd ipuh");
+        sc.Credentials = new NetworkCredential("mikita.verkhavodka@gmail.com", "in tg");
         sc.EnableSsl = true;
 
         await sc.SendMailAsync(mm);
@@ -141,7 +141,7 @@ public class EmailService : IEmailService
         mm.Body = code;
         mm.IsBodyHtml = true;
         sc.Port = 587;
-        sc.Credentials = new NetworkCredential("mikita.verkhavodka@gmail.com", "lmqa tylg iawd ipuh");
+        sc.Credentials = new NetworkCredential("mikita.verkhavodka@gmail.com", "in tg");
         sc.EnableSsl = true;
 
         await sc.SendMailAsync(mm);
@@ -223,7 +223,7 @@ public class EmailService : IEmailService
 
         mm.IsBodyHtml = true;
         sc.Port = 587;
-        sc.Credentials = new NetworkCredential("mikita.verkhavodka@gmail.com", "lmqa tylg iawd ipuh");
+        sc.Credentials = new NetworkCredential("mikita.verkhavodka@gmail.com", "in tg");
         sc.EnableSsl = true;
 
         await sc.SendMailAsync(mm);
@@ -279,7 +279,7 @@ public class EmailService : IEmailService
 
         mm.IsBodyHtml = true;
         sc.Port = 587;
-        sc.Credentials = new NetworkCredential("mikita.verkhavodka@gmail.com", "lmqa tylg iawd ipuh");
+        sc.Credentials = new NetworkCredential("mikita.verkhavodka@gmail.com", "in tg");
         sc.EnableSsl = true;
 
         await sc.SendMailAsync(mm);
