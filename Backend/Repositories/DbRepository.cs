@@ -2,7 +2,6 @@
 using Entities;
 using Microsoft.EntityFrameworkCore;
 using Repository;
-using TestApplication.Data;
 
 namespace UP.Repositories;
 

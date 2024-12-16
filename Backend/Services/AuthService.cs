@@ -1,18 +1,8 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using Analitique.BackEnd.Handlers;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using ProjectX.Exceptions;
-using Repository;
-using UP.DTO;
-using UP.ModelsEF;
-using UP.Services.Interfaces;
-using AuthResponse = UP.DTO.AuthResponse;
+﻿using UP.Exceptions;
 
 namespace UP.Services;
 
+[AutoInterface]
 public class AuthService : IAuthService
 {
     private readonly IConfiguration _configuration;

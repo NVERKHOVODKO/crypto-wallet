@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
-using ProjectX.Exceptions;
 using Repository;
-using TestApplication.Data;
 using UP.Models;
 using UP.Models.Base;
 using UP.ModelsEF;

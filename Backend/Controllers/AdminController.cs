@@ -1,11 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ProjectX.Exceptions;
-using Repository;
-using UP.Models;
-using UP.ModelsEF;
-using UP.Services.Interfaces;
+﻿using UP.Exceptions;
 
 namespace UP.Controllers;
 

@@ -1,22 +1,4 @@
-using System.Reflection;
-using System.Text;
-using System.Text.Json.Serialization;
-using Api.OpenAI.Handlers;
-using Api.OpenAI.Handlers.Interfaces;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.CookiePolicy;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
-using ProjectX.Middlewares;
-using Repository;
-using TestApplication.Data;
-using UP.Data;
-using UP.Migrations.Services;
-using UP.Migrations.Services.Interfaces;
-using UP.Repositories;
-using UP.Services;
-using UP.Services.Interfaces;
+using UP.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -74,7 +56,6 @@ builder.Services.AddScoped<IServiceService, ServiceService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<ICurrencyService, CurrencyService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-
 
 builder.Services.AddControllers()
     .AddJsonOptions(options => { options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve; });

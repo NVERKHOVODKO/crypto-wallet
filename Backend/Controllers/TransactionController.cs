@@ -1,12 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
-using Repository;
-using UP.DTO;
-using UP.ModelsEF;
-using UP.Repositories;
-using UP.Services.Interfaces;
-
-namespace UP.Controllers;
+﻿namespace UP.Controllers;
 
 [ApiController]
 [Route("[controller]")]

@@ -1,7 +1,4 @@
-﻿using System.Net;
-using System.Net.Sockets;
-
-namespace Analitique.BackEnd.Handlers;
+﻿namespace UP.Handlers;
 
 public class IPHandler
 {

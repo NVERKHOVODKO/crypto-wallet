@@ -1,9 +1,6 @@
-﻿using System.Security.Cryptography;
-using System.Text;
-using Api.OpenAI.Handlers.Interfaces;
+﻿namespace UP.Helpers;
 
-namespace Api.OpenAI.Handlers;
-
+[AutoInterface]
 public class HashHelpers : IHashHelpers
 {
     public string GenerateSalt(int size)

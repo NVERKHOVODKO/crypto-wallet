@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ProjectX.Exceptions;
 using Repository;
-using TestApplication.Data;
+using UP.Exceptions;
 using UP.ModelsEF;
 
 namespace UP.Repositories;

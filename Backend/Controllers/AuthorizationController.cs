@@ -1,12 +1,4 @@
-﻿using System.Text.RegularExpressions;
-using Analitique.BackEnd.Handlers;
-using Api.OpenAI.Handlers.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ProjectX.Exceptions;
-using Repository;
-using UP.DTO;
-using UP.ModelsEF;
+﻿using UP.Exceptions;
 
 namespace UP.Controllers;
 

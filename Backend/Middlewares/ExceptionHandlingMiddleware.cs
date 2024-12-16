@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Security.Authentication;
-using ProjectX.Exceptions;
 using TestApplication.DTO;
+using UP.Exceptions;
 
 namespace ProjectX.Middlewares;
 

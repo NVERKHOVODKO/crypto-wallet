@@ -1,4 +1,4 @@
-﻿namespace ProjectX.Exceptions;
+﻿namespace UP.Exceptions;
 
 public class EntityNotFoundException : Exception
 {

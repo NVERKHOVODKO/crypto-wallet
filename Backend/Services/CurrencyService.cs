@@ -1,11 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ProjectX.Exceptions;
-using Repository;
-using UP.Models;
-using UP.Services.Interfaces;
+﻿namespace UP.Services;
 
-namespace UP.Services;
-
+[AutoInterface]
 public class CurrencyService : ICurrencyService
 {
     private readonly IDbRepository _dbRepository;
@@ -39,7 +34,7 @@ public class CurrencyService : ICurrencyService
                 Timestamp = currentTime,
                 CoinId = coin.Id
             };
-            var result = await _dbRepository.Add(newPrice);
+            await _dbRepository.Add(newPrice);
             await _dbRepository.SaveChangesAsync();
         }
         catch (Exception e)

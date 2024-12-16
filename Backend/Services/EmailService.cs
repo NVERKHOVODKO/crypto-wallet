@@ -1,18 +1,6 @@
-﻿using System.Net;
-using System.Net.Mail;
-using System.Security.Authentication;
-using System.Text.RegularExpressions;
-using Analitique.BackEnd.Handlers;
-using Microsoft.EntityFrameworkCore;
-using ProjectX.Exceptions;
-using Repository;
-using TestApplication.DTO;
-using UP.DTO;
-using UP.ModelsEF;
-using UP.Services.Interfaces;
+﻿namespace UP.Services;
 
-namespace UP.Services;
-
+[AutoInterface]
 public class EmailService : IEmailService
 {
     private readonly IDbRepository _dbRepository;

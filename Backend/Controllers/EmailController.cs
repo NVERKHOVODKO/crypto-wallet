@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using TestApplication.DTO;
-using UP.DTO;
-using UP.Services.Interfaces;
-
-namespace UP.Controllers;
+﻿namespace UP.Controllers;
 
 [ApiController]
 [Route("[controller]")]

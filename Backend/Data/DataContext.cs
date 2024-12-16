@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using UP.Models;
-using UP.ModelsEF;
-
-namespace TestApplication.Data;
+﻿namespace UP.Data;
 
 public class DataContext : DbContext
 {

@@ -1,20 +1,17 @@
-﻿using Repository;
-using UP.Migrations.Services.Interfaces;
-using UP.Models;
+﻿namespace UP.Services;
 
-namespace UP.Migrations.Services;
-
-public class ServiceService : IServiceService
+/// <summary>
+/// Сервис для работы с услугами
+/// </summary>
+[AutoInterface]
+public class ServiceService(IDbRepository repository) : IServiceService
 {
-    private readonly IDbRepository _repository;
-
-    public ServiceService(IDbRepository repository)
-    {
-        _repository = repository;
-    }
-    
+    /// <summary>
+    /// Получение 
+    /// </summary>
+    /// <returns></returns>
     public Task<IEnumerable<Service>> GetServices()
     {
-        return Task.FromResult<IEnumerable<Service>>(_repository.GetAll<Service>());
+        return Task.FromResult<IEnumerable<Service>>(repository.GetAll<Service>());
     }
 }

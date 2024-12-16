@@ -1,13 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json.Linq;
-using ProjectX.Exceptions;
-using Repository;
-using UP.Models;
-using UP.Models.Base;
-using UP.Services.Interfaces;
-
-namespace UP.Controllers;
+﻿namespace UP.Controllers;
 
 /// <summary>
 /// Контроллер для управления валютами, балансами пользователей и получения информации о криптовалютах.

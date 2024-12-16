@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Repository;
-using TestApplication.Data;
 using UP.Models.Base;
 using UP.ModelsEF;
 

@@ -1,9 +1,4 @@
-﻿using Api.OpenAI.Handlers.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using Repository;
-using UP.Controllers;
-
-namespace UP.Models;
+﻿namespace UP.Models;
 
 public class CoinList
 {
