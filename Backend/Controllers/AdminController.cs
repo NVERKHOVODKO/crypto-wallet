@@ -110,7 +110,7 @@ public class AdminController : ControllerBase
     /// Получает список всех пользователей.
     /// </summary>
     /// <returns>Список пользователей.</returns>
-    [Authorize]
+    //[Authorize]
     [HttpGet("getUserList")]
     public Task<ActionResult> GetUserList()
     {
