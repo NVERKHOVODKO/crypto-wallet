@@ -3,7 +3,6 @@
 /// <summary>
 /// Контроллер для работы с пользователями
 /// </summary>
-/// <param name="dbRepository"></param>
 /// <param name="userService"></param>
 [ApiController]
 [Route("user")]
