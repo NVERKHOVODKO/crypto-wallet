@@ -1,7 +1,16 @@
-### Архитектура
+# Архитектура
 
 ## Физическая модель базы данных
 ![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/schemes/DB.jpg)
+
+## Архитектура в нотации C4
+
+![Описание изображения]([https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/schemes/DB.jpg](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/staff/%D0%A14_1.jpg))
+### Рисунок 1.1 – Второй уровень С4-модели
+
+
+![Описание изображения]([https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/schemes/DB.jpg](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/staff/%D0%A14_2.jpg))
+### Рисунок 1.2 – Компонентный уровень модели С4
 
 ## UML-диаграммы
 
@@ -13,7 +22,7 @@
 
 # Пользовательский интерфейс
 
-### User Flow диаграммы
+## User Flow диаграммы
 
 **User Flow** – это схема движения пользователя, наглядный разветвлённый сценарий его взаимодействия с конкретным цифровым продуктом: приложением или сайтом. User Flow показывает точки входа в сценарий, все переходы и страницы на пути к достижению пользователем его цели. 
 
