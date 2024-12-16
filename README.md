@@ -1939,4 +1939,4 @@ docker-compose stop
 
 ## Оценка качества кода 
 
--- тут рисунок с метриками
+![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/staff/%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA%D0%B8.jpg)
