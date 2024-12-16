@@ -25,7 +25,7 @@ public class EmailController : ControllerBase
     [HttpPost("sendVerificationCode")]
     public async Task<IActionResult> SendVerificationCode(SendVerificationCodeRequest request)
     {
-        await _emailService.SendVerificationCode(request.Id);
+        //await _emailService.SendVerificationCode(request.Id);
         return Ok();
     }
 
@@ -49,7 +49,7 @@ public class EmailController : ControllerBase
     [HttpPost("confirm-restore-password")]
     public async Task<IActionResult> ConfirmRestorePassword([FromBody] VerifyEmailRequest request)
     {
-        await _emailService.VerifyEmail(request);
+        //await _emailService.VerifyEmail(request);
         return Ok();
     }
     
@@ -62,7 +62,7 @@ public class EmailController : ControllerBase
     [AllowAnonymous]
     public async Task<IActionResult> RestorePassword([FromBody] RestorePasswordRequest request)
     {
-        await _emailService.RestorePassword(request);
+        //await _emailService.RestorePassword(request);
         return Ok();
     }
     
@@ -75,7 +75,7 @@ public class EmailController : ControllerBase
     [AllowAnonymous]
     public async Task<IActionResult> SendMessage([FromBody] SendMessageRequest request)
     {
-        await _emailService.SendMessageBlock(request);
+        //await _emailService.SendMessageBlock(request);
         return Ok();
     }
 }
