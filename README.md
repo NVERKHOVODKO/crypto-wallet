@@ -18,7 +18,10 @@
    - [Хэширование паролей](#хэширование-паролей-с-использованием-соли)  
 
 4. [Развёртывание](#развёртывание)  
-   - [Docker Compose для развертывания](#docker-compose-для-развертывания-приложения)  
+   - [Docker Compose для развертывания](#docker-compose-для-развертывания-приложения)
+  
+     
+5. [Тестирование](#тестирование)
 
 # Архитектура
 
@@ -260,3 +263,127 @@ docker-compose stop
 ## Оценка качества кода 
 
 ![Описание изображения](https://github.com/NVERKHOVODKO/crypto-wallet/blob/main/Docs/staff/%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA%D0%B8.jpg)
+
+## Тестирование  
+
+### Процесс тестирования  
+
+Для тестирования использовались unit-тесты с применением следующих инструментов:  
+- **NUnit** — фреймворк для написания и выполнения тестов.  
+- **FluentAssertions** — библиотека для удобного написания утверждений в тестах.  
+- **In-Memory Database** — для имитации работы с базой данных без необходимости подключения к реальной БД.  
+
+### Описание тестов  
+
+1. **Инициализация окружения:**  
+   Для выполнения тестов используется `InMemoryDatabase`, что позволяет создавать изолированную среду для каждого теста.  
+
+   ```csharp
+   var options = new DbContextOptionsBuilder<DataContext>()
+       .UseInMemoryDatabase(databaseName: "TestDatabase")
+       .Options;
+
+   _context = new DataContext(options);
+   ```
+
+2. **Очистка окружения после выполнения тестов:**  
+   База данных удаляется после каждого теста:  
+
+   ```csharp
+   [TearDown]
+   public void TearDown()
+   {
+       _context.Database.EnsureDeleted();
+       _context.Dispose();
+   }
+   ```
+
+---
+
+### Примеры тестов  
+
+#### 1. Проверка получения логина пользователя по ID  
+
+Этот тест проверяет, что метод `GetUserLoginByIdAsync` корректно возвращает логин пользователя.  
+
+```csharp
+[Test]
+public async Task GetUserLoginByIdAsyncTest()
+{
+    // Arrange
+    var entity = new User
+    {
+        DateCreated = DateTime.UtcNow,
+        Login = "Login",
+        Password = "Password",
+        Email = "test@gmail.com",
+        IsDeleted = false,
+        RoleId = 1,
+        IsBlocked = false,
+        Salt = "Salt"
+    };
+
+    await _context.Users.AddAsync(entity);
+    await _context.SaveChangesAsync();
+
+    // Act
+    var result = await _service.GetUserLoginByIdAsync(entity.Id);
+
+    // Assert
+    result.Should().Be("Login");
+}
+```
+
+#### 2. Проверка исключения при создании пользователя без обязательных данных  
+
+**Пример 1: Никнейм отсутствует**  
+```csharp
+[Test]
+public void CreateAsync_ShouldThrowEntityNotFoundException_WhenNicknameIsNull()
+{
+    // Arrange
+    var request = new CreateUserRequest { Nickname = null };
+
+    // Act & Assert
+    var act = async () => await _service.CreateAsync(request);
+    act.Should().ThrowAsync<EntityNotFoundException>().WithMessage("Никнейм не может быть пустым");
+}
+```
+
+**Пример 2: Пароль слишком короткий**  
+```csharp
+[Test]
+public void CreateAsync_ShouldThrowEntityNotFoundException_WhenPasswordIsTooShort()
+{
+    // Arrange
+    var request = new CreateUserRequest { Password = "123" };
+
+    // Act & Assert
+    var act = async () => await _service.CreateAsync(request);
+    act.Should().ThrowAsync<EntityNotFoundException>().WithMessage("Пароль не может быть короче 4 символов");
+}
+```
+
+---
+
+### Итог  
+
+Тесты позволяют:  
+1. Проверить корректность выполнения основных методов сервиса пользователей.  
+2. Убедиться в обработке исключений для валидации данных.  
+3. Обеспечить стабильность функционала при изменениях в коде.  
+
+Все тесты выполняются в изолированной среде с использованием `InMemoryDatabase`, что исключает влияние внешних факторов на результаты тестов.  
+
+Для запуска тестов используйте команду:  
+
+```bash
+dotnet test
+```
+
+--- 
+
+Таким образом, README содержит:  
+1. Краткое описание процесса тестирования.  
+2. Примеры тестов с пояснениями.  
+3. Указание на инструменты и подходы, используемые при написании тестов.
